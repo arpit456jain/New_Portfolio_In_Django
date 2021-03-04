@@ -103,17 +103,17 @@ def handleSignUp(request):
         print(exist)
         if len(exist)!=0:
             messages.error(request, " email  already exist")
-            return redirect('/myblog/home')
+            return redirect('/myblog/')
 
         # check for errorneous input
          # check for errorneous input
         if len(username)<3:
             messages.error(request, " Your user name must be under 10 characters")
-            return redirect('/myblog/home')
+            return redirect('/myblog/')
 
         if not username.isalnum():
             messages.error(request, " User name should only contain letters and numbers")
-            return redirect('/myblog/home')
+            return redirect('/myblog/')
         if (pass1!= pass2):
              messages.error(request, " Passwords do not match")
              return redirect('home')
@@ -173,7 +173,7 @@ def blogPost(request, slug):
     print(replyDict)
     context={'post':post, 'comments': comments, 'user': request.user,'replyDict':replyDict}
     # context={"post":post}
-    return render(request,'myblog/home/blogPost.html',context)
+    return render(request,'/myblog/home/blogPost.html',context)
 
 def postComment(request):
     if request.method == "POST":

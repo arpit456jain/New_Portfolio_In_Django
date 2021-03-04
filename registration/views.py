@@ -8,7 +8,7 @@ from django.contrib.auth.models import User,auth
 def signup(request):
     # return HttpResponse('signup')
     if request.method == "POST":
-        print('post')
+        # print('post')
         fname = request.POST['fname']
         sname = ""
         uname = request.POST['uname']
@@ -27,19 +27,20 @@ def signup(request):
                     userobj = User.objects.create_user(username=uname,password=pass1,email = email,first_name=fname,last_name=sname)
                     userobj.save()
                     messages.success(request,'Successfully!! Registred')
-                    print('succesfully saved')
+                    # print('succesfully saved')
            
         else:
             messages.error(request,'password not matched')
         return redirect('/stringAnalyzer/')
     else:
-        print('not post')
+        pass
+        # print('not post')
     return render(request,'string/signup.html')
 
 def login(request):
     # return HttpResponse('login')
     if request.method == 'POST':
-        print('post')
+        # print('post')
         username = request.POST['username']
         password = request.POST['password']
          #validating
@@ -49,16 +50,17 @@ def login(request):
             # now we will use auth for cheking existing user
             user = auth.authenticate(username=username,password=password)
             if user == None:
-                print('no acount')
+                # print('no acount')
                 messages.error(request,'There is no account with this username Please Sign Up first!!')
                 return redirect('/stringAnalyzer/registration/')
             else:
-                print('okay you can login')
+                # print('okay you can login')
                 auth.login(request,user)
                 messages.success(request,'Successfully Logged In!')
                 return redirect('/stringAnalyzer/')
     else:
-        print('not post')
+        pass
+        # print('not post')
     return render(request,'string/login.html')
 
 def logout(request):

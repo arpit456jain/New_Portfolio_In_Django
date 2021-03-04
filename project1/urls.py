@@ -20,8 +20,11 @@ from project1 import views
 admin.site.site_header="Arpit Jain is Admin"
 admin.site.site_title="CodeSmashers Admin Panel"
 admin.site.index_title="Welcome to CodeSmashers Admin Panel"
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/favicon.ico'))),
     # path('', views.home, name='home'),
     path('',include("home.urls")),# main Portfolio
     path('calculator/',include("calculatorapp.urls")),

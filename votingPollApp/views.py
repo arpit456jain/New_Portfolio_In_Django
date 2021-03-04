@@ -34,8 +34,8 @@ def connectTOMail():
     con.ehlo()
     print("hello sucessfull")
     con.starttls()
-    con.login("arpit456jain@gmail.com","#vanshika jain#")
-    print("login succesfull")
+    # con.login("arpit456jain@gmail.com","#vanshika jain#")
+    # print("login succesfull")
     return con
 
 
@@ -55,7 +55,8 @@ def feedback(request):
         # con.sendmail("arpit456jain@gmail.com",email,"Subject:Feed Back of Calculator app \n\n"+"Thank You for the feed back")
         messages.success(request,"Thank You! Your feedback is very precious to us.")
     else:
-        print("not post")
+        pass
+        # print("not post")
       
     # return HttpResponse('feedback page')
     return render(request,'votingPollApp/feedback.html')

@@ -9,9 +9,9 @@ from django.contrib import messages
 def connectTOMail():
     con = smtplib.SMTP("smtp.gmail.com",587)
     con.ehlo()
-    print("hello sucessfull")
+    # print("hello sucessfull")
     con.starttls()
-    con.login("arpit456jain@gmail.com","#vanshika jain#")
+    # con.login("arpit456jain@gmail.com","#vanshika jain#")
     print("login succesfull")
     return con
 
@@ -33,7 +33,7 @@ def analyse(request):
     capitalize = request.POST.get('capitalize','off')
 
     purpose = ""
-    print(removepunc1,fullcaps,newlineremover,extraspaceremover)
+    # print(removepunc1,fullcaps,newlineremover,extraspaceremover)
     #value of punctuation
     result = string.punctuation
    # print(valueoftext,removepunc1,type(removepunc1),result ,type(result) )
@@ -72,11 +72,11 @@ def analyse(request):
             #print("pre", analysed_text)
             purpose = purpose + 'Removing new line\n'
             params = {'purpose': purpose, 'analysed_text': analysed_text, 'valueoftext':newlineremover}
-            print(params)
+            # print(params)
             valueoftext = analysed_text
     if extraspaceremover == "on":
                 valueoftext = valueoftext.strip()
-                print('inside')
+                # print('inside')
                 analysed_text = ""
                 try:
 
@@ -86,10 +86,11 @@ def analyse(request):
                         else:
                             analysed_text=analysed_text+char
                 except:
-                    print('myerror ignore it',)
+                    pass
+                    # print('myerror ignore it',)
                 finally:
 
-                    print("after extraspaceremover" + analysed_text)
+                    # print("after extraspaceremover" + analysed_text)
                     valueoftext=analysed_text
                     purpose = purpose +  'Removing extra spaces\n'
                     params = {'purpose': purpose , 'analysed_text': analysed_text, 'valueoftext':extraspaceremover}
@@ -119,10 +120,10 @@ def feedback(request):
 
         print(name,email,feedback)
         
-        con = connectTOMail()
+        # con = connectTOMail()
         obj = UserFeedback(name=name,email=email,msg=feedback)
         obj.save()
-        con.sendmail("arpit456jain@gmail.com",email,"Subject:Feed Back of Calculator app \n\n"+"Thank You for the feed back")
+        # con.sendmail("arpit456jain@gmail.com",email,"Subject:Feed Back of Calculator app \n\n"+"Thank You for the feed back")
         messages.success(request,"Thank You for contacting me Your Feedback is very precious to me!")
     else:
         pass

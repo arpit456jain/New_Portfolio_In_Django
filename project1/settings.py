@@ -36,8 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.humanize',
     'home',
     'calculatorapp',
     'StringAnalyzerApp',
@@ -46,6 +44,8 @@ INSTALLED_APPS = [
     'ToDoListApp',
     'ourteams',
     'blog',
+    'django.contrib.staticfiles',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
