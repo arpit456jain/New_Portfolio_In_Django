@@ -1,0 +1,107 @@
+{% extends 'base2.html' %}
+{% block title %} CodeSmashers
+{% endblock title %}
+{% block homeactive %}
+menu-active
+{% endblock homeactive %}
+
+{% block mycss %}
+
+{% endblock mycss %}
+
+{% block body %}
+{% load static %}
+{% static 'img/skills' as baseurl %}
+{% static 'img/experience' as baseurl2 %}
+<section id="intro" style="background: url('static/img/bg/bg1.jpg') top center;width: 100%;height: 100vh;  
+  background-size: cover; overflow: hidden; position: relative;">
+    <div class="intro-container wow fadeIn">
+      <h1 class="mb-4 pb-0">CodeSmashers<br><span>Marketing</span> Conference</h1>
+      <p class="mb-4 pb-0">10-12 December, Downtown Conference Center, New York</p>
+      <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
+        data-autoplay="true"></a>
+      <a href="/about" class="about-btn scrollto">About Me</a>
+    </div>
+  </section>
+
+<section class="container text-center my-5 py-4">
+  <h1>SKILLS</h1>
+  <p>These are some of my skills i had learned so far.But i am still because <br> learning is the process which never
+    ends!!</p>
+
+  <div class="row rowsetting">
+    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
+      <div class="imgsetting d-block m-auto">
+        <img src="{{baseurl}}/C++.png" class="img-fluid">
+      </div>
+      <h2 class="mt-3">C,C++</h2>
+      <p>Well we all know the importane of C and C++ although its very old but it is still in use which implies its
+        importance</p>
+    </div>
+    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
+      <div class="imgsetting d-block m-auto">
+        <img src="{{baseurl}}/webd.png" class="img-fluid" style="width: 20vh;height: 15vh;">
+      </div>
+      <h2 class="mt-3">Html,Css,Js</h2>
+      <p>It is the basic building block of Web Development every person should know the basics of html,css,and js</p>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
+      <div class="imgsetting d-block m-auto">
+        <img src="{{baseurl}}/python.jpg" class="img-fluid">
+      </div>
+      <h2 class="mt-3">Python</h2>
+      <p>Python is nowdays one of the most popular programming language used in many fields like web D , coding, ML ,
+        Data Science and lots n lots of more such fields</p>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-4 col-10 d-block m-auto mb-5">
+    <h2>And Much More</h2>
+    <a href="/portfolio" class="btn btn-primary">Go to my Portfoilio</a>
+  </div>
+
+
+  </div>
+</section>
+
+
+
+
+
+<div class="container text-center mb-5">
+  <h1>My Experiences</h1>
+  <p>I had done some internship before you can check Credentials in Portfolio page </p>
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
+      <figure class="figure">
+        <img src="{{baseurl2}}/way2.png" class="img-fluid figure-img rounded-circle">
+        <figcaption>
+          <h4>Way2assignments</h4>
+          <p>Its a 30 days work from home Internship as Buisness Development intern its a great experience as it was
+            my first internship</p>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
+      <figure class="figure">
+        <img src="{{baseurl2}}/Start Up Inc.jpg" class="img-fluid figure-img rounded-circle">
+        <figcaption>
+          <h4>StartUp Inc</h4>
+          <p>Iti is also a 30 days work from home Internship as Front-end developer intern and its my second
+            internship and i learn a lot from this i am very greatful for their support.</p>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
+      <figure class="figure">
+        <img src="{{baseurl2}}/next.jpg" class="img-fluid figure-img rounded-circle">
+        <figcaption>
+          <h4>Wating for the next</h4>
+          <p>I am eagerly waiting for the next internship because i belive in skills and experience</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

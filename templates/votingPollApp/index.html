@@ -1,0 +1,60 @@
+{% extends 'base3.html' %}
+{% block title %}My VotingPoll App{% endblock title %}
+{% block projectname %} <a href="/votingPollApp">My VotingPoll App</a> {% endblock projectname %}
+{% block body %}
+{% block homeactive %}menu-active{% endblock homeactive %}
+{% block feedback %}<li><a href="/votingPollApp/feedback">FeedBack</a></li>{% endblock feedback %}<li class="menu-active"><a href="/votingPollApp/feedback">FeedBack</a></li>
+<section id="intro" style="background: url('/static/img/bg/bg1.jpg') top center;width: 100%;height: 100vh;  
+  background-size: cover; overflow: hidden; position: relative;">
+    <div class="intro-container wow fadeIn">
+      <h1 class="mb-4 pb-0">My Voting Poll App<br><span>Marketing</span> Conference</h1>
+      <p class="mb-4 pb-0">10-12 December, Downtown Conference Center, New York</p>
+      
+      <a href="/about" class="about-btn scrollto">About Me</a>
+    </div>
+  </section>
+
+
+    <div class="container my-2 py-2">
+    <h1 class="text-center">Select You Languages and Vote for it</h1>
+        <form method="get" action="getQuery">
+            <input list = "languages" class="form-control" name="languages">
+            <datalist id="languages">
+            {% for lang in languages %}
+                <option value={{lang}}>
+            {% endfor %}
+            </datalist>
+        <button type="submit" class="btn btn-primary my-3">Submit</button>
+        </form>
+    </div>
+
+    <div class="container">
+    <h1 class="text-center"><span class="badge bg-success" style="width:90vw" >Result Table</span></h1>
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Languages</th>
+      <th scope="col">CountFreq</th>
+      <th scope="col">Progress</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i,j  in count_freq.items  %}
+        <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i}}</td>
+      <td>{{j}}</td>
+      <td>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: {{j}}%;" aria-valuenow="{{j}}" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </td>
+    </tr>
+    
+    {% endfor %}
+  </tbody>
+</table>
+    </div>
+
+{% endblock body %}

@@ -1,0 +1,110 @@
+{% extends 'base3.html' %}
+{% block title %}ToDoListApp App-Task{% endblock title %}
+{% block projectname %} <a href="/ToDoListApp ">ToDoListApp App</a> {% endblock projectname %}
+
+{% block feedback %}{% endblock feedback %}
+{% block extranavs %}
+<li class="nav-item menu-active" >
+        <a class="nav-link" href="/ToDoListApp/task">Task</a>
+      </li>
+{% endblock extranavs %}
+{% block searchbar %}
+<form class="d-flex" action="/ToDoListApp/search/">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+{% endblock searchbar %}
+
+{% block ToDoListjs %}
+ <!-- these are for todolistapp -->
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#myTable').DataTable();
+    });  
+  </script>
+{% endblock ToDoListjs %}
+{% block body %}
+
+
+<section id="intro" style="background: url('/static/img/bg/bg1.jpg') top center;width: 100%;height: 100vh;  
+  background-size: cover; overflow: hidden; position: relative;">
+    <div class="intro-container wow fadeIn">
+      <h1 class="mb-4 pb-0">My ToDoListApp<br><span>Task</span> Conference</h1>
+      <p class="mb-4 pb-0">10-12 December, Downtown Conference Center, New York</p>
+      
+      <a href="/about" class="about-btn scrollto">About Me</a>
+    </div>
+  </section>
+
+<!-- Modal -->
+<div class="modal fade" id="addmoretask" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <form action="/ToDoListApp/" method="post">
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Title of Task</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="title" name="tastTitle" required>
+  </div>
+  
+ 
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Task Description</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="taskDesc" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Task</button>
+</form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<div class="container my-5">
+    <h2 class="text-center my-2">To Do List - AllTasks </h2>
+    <table class="table" id="myTable">
+  <thead>
+    <tr>
+      <th scope="col">+</th>
+      <th scope="col" style="width: 10vw;">TAST TITLE</th>
+      <th scope="col">TASK DESC</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for task in alltasks %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{task.taskTitle}}</td>
+      <td >{{task.TaskDesc}}</td>
+      <th scope="row"><a href="/ToDoListApp/deleteitem/{{task.id}}" class="btn btn-primary">Delete</a></th>
+      
+    </tr>
+    
+    {% endfor %}
+  </tbody>
+</table>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addmoretask">
+  Add More Tasks
+</button>
+</div>
+<br>
+<br>
+
+{% endblock body %}

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  {% load static %}
+  {% static 'img' as baseurl %}
+  {% static 'img' as baseurl %}
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
+    rel="stylesheet">
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'css/navbarstyle.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <title>{% block title %}
+    {% endblock title %}</title>
+  {% block linkcss %}
+  {% endblock linkcss %}
+  <style>
+    {
+      % block mycss %
+    }
+
+      {
+      % endblock mycss %
+    }
+
+    #intro {}
+  </style>
+</head>
+
+<body>
+
+  <!-- whats app -->
+  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+  <div class="elfsight-app-9803d9b2-b24d-4a44-818d-53efc83fa902"></div>
+  <!--==========================
+    Header
+  ============================-->
+
+  <header id="header" style="background: black;">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+
+        {% block projectname %}{% endblock projectname %}
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="{% block homeactive %}{% endblock homeactive %}"><a href="/">Home</a></li>
+          <li class="{% block aboutactive %}{% endblock aboutactive %}"><a href="/about">About Me</a></li>
+          <li class="{% block contactactive %}{% endblock contactactive %}"><a href="/contact">Contact Me</a></li>
+          {% block feedback %}{% endblock feedback %}
+          <li class=""><a href="/djangoProjects">Other Django Projects</a></li>
+          {% block extranavs %}{% endblock extranavs %}
+          <!-- <li class="buy-tickets"><a href="#buy-tickets">Buy Tickets</a></li> -->
+          <li>{% block searchbar %}{% endblock searchbar %}</li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+
+
+  {% for message in messages %}
+  <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert"
+    style="margin-top:15vh;margin-bottom:0vh;">
+    <strong>{{message.tags}}</strong> {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  <!--==========================
+    Intro Section
+  ============================-->
+
+
+
+  {% block body %}
+  {% endblock body %}
+
+  <!--==========================
+    Footer
+  ============================-->
+<footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h1><a href="/" style="color:white;">Code<span style="color:red">Smashers</span></a></h1>
+            <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate cupiditate debitis accusamus repellat cumque.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="fa fa-angle-right"></i> <a href="/">Home</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="/portfolio">PortFolio</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="/worksample">Front-End Worksample</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="/about">About Me</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="/contact">Contact Me</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Django Projects</h4>
+            <ul>
+              <li><i class="fa fa-angle-right"></i> <a href="/calculator/">Calculator App</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="/stringAnalyzer/">StringAnalyzer App</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="/ToDoListApp/">ToDoList App</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="/ourteams/">MyDynamicGallery App</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="/myblog/">CodeSmashers Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Me</h4>
+            <p>
+              House no 654 E-3<br>
+              sector J, Aliganj<br>
+              Lucknow , U.P, <br>
+              <strong>Phone:</strong> 9455129077<br>
+              <strong>Email:</strong> 111arpit1@gmail.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="https://github.com/arpit456jain" class="twitter"><i class="fa fa-github"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=100011460231562" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/111arpit1/" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="https://www.codechef.com/users/aj15" class="google-plus"><i class="fa fa-code"></i></a>
+              <a href="https://www.linkedin.com/in/arpit-jain-0b054a170/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>CodeSmashers</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        
+        Designed by <a href="/about">Arpit jain</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+  <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+  <script src="{% static 'lib/superfish/hoverIntent.js' %}"></script>
+  <script src="{% static 'lib/superfish/superfish.min.js' %}"></script>
+  <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+  <script src="{% static 'lib/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+  <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+  {% block myjs %}
+  {% endblock myjs %}
+  <!-- Template Main Javascript File -->
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+
+
+{% block ToDoListjs %}
+
+{% endblock ToDoListjs %}
+ 
+</body>
+
+</html>

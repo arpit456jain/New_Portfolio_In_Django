@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block active %}active{% endblock active %}
+
+{% block body %}
+
+ <div class="demo">
+        <div class="container my-3">
+            <div class="row text-center">
+                <h1 class="heading-title"> Our Team </h1>
+            </div>
+
+            <div class="row">
+            {% for members in allmembers %} 
+            {% comment %} {{members.img}} {% endcomment %}
+            <div class="col-md-3 col-sm-6 mt-3">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="/{{members.img}}" alt=""/>
+                            <ul class="social">
+                                <li><a href="{{members.fb_url}}"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="{{members.github_url}}"><i class="fa fa-github"></i></a></li>
+                                <li><a href="{{members.insta_url}}"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="{{members.linkedn_url}}"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">{{members.name}}</h3>
+                            <small class="post">{{members.jobrole}}</small>
+                            <small>Email: <b>{{members.email}}</b></small>
+                        </div>
+                        <div class="team-layer">
+                            <a href="#">{{members.name}}</a>
+                            <span class="post">{{members.jobrole}}</span>
+                        </div>
+                    </div>
+                      {% if user.username == auth_user %}
+                <a href="/ourteams/edit/{{members.id}}" class="btn btn-danger mt-1 mb-2">Edit</a>
+                <a href="/ourteams/delete/{{members.id}}" class="btn btn-danger mt-1 mb-2">Delete</a>
+            {% endif %}
+                </div>
+            {% endfor %}
+                
+
+<!--                <div class="col-md-3 col-sm-6">-->
+<!--                    <div class="our-team">-->
+<!--                        <div class="pic">-->
+<!--                            <img src="{% static '/ourteams/images/Affluent-Women-Mailing-Lists.jpg' %}" alt=""/>-->
+<!--                            <ul class="social">-->
+<!--                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>-->
+<!--                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>-->
+<!--                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
+<!--                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                        <div class="team-content">-->
+<!--                            <h3 class="title">Miranda joy</h3>-->
+<!--                            <small class="post">Web Designer</small>-->
+<!--                            <small>Email: <b>mail@example.com</b></small>-->
+<!--                        </div>-->
+<!--                        <div class="team-layer">-->
+<!--                            <a href="#">Miranda joy</a>-->
+<!--                            <span class="post">Web Designer</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+                
+
+            </div>
+        </div>
+    </div>
+
+
+<!-- Modal -->
+<div class="modal  fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="post" enctype="multipart/form-data"> 
+        {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='name'>
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email'>
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">number</label>
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='number'>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">img</label>
+    <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='img'>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Job Role</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='jobrole'>
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Fb Profile</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='fb_url'>
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Insta Profile</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='insta_url'>
+  </div>
+ <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Git Hub Profile</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='github_url'>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Linkedin Profile</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='linkedn_url'>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}
+

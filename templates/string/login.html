@@ -1,0 +1,42 @@
+{% extends 'string/base.html' %}
+{% block title %}Login
+{% endblock title %}
+{% block projectname %} <a href="/stringAnalyzer/">My StringAnalyzerApp</a> {% endblock projectname %}
+
+{% block feedback %}<li><a href="/stringAnalyzer/feedback">FeedBack</a></li>{% endblock feedback %}
+
+
+{% block body %}
+
+<section id="intro" style="background: url('/static/img/bg/bg1.jpg') top center;width: 100%;height: 100vh;  
+  background-size: cover; overflow: hidden; position: relative;">
+    <div class="intro-container wow fadeIn">
+      <h1 class="mb-4 pb-0">My StringAnalyzerApp App<br><span>login page</span> Conference</h1>
+      <p class="mb-4 pb-0">10-12 December, Downtown Conference Center, New York</p>
+      
+      <a href="/about" class="about-btn scrollto">About Me</a>
+    </div>
+  </section>
+
+<div class="container my-5">
+<h1 class="text-center">
+    Login here
+</h1>
+    <form action="/stringAnalyzer/registration/login/" method="post">
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="username">User Name</label>
+    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name="password">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock body %}

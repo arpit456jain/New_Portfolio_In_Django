@@ -1,0 +1,57 @@
+{% extends 'myblog/base2.html' %}
+{% block title %}home
+{% endblock title %}
+
+{% block homeactive %}active
+{% endblock homeactive %}
+{% load static %}
+
+{% block body %}
+<!-- Page Header -->
+  <header class="masthead" style="background-image: url('/static/myblog/img/bg/bg1.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading mt-5">
+            <h1>CodeSmashersBlog</h1>
+            <span class="subheading">This is the home page where all posts can be accessed by users</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {% for post in allPosts %}
+        
+        <div class="post-preview">
+          <a href="{{post.slug}}">
+            <h2 class="post-title">
+              {{post.title}}
+            </h2>
+            <p class="post-content">
+              {{post.content|safe|truncatechars:150}}
+            </p>
+          </a>
+          <br>
+          <p class="post-meta">Posted by
+            <a href="#">{{post.author}}</a>
+            on{{post.timeStamp}}</p>
+        </div>
+        
+        
+        {% endfor %}
+        <!-- Pager -->
+        <div class="clearfix">
+           <a class="btn btn-primary float-right" href="{{next}}">Next &rarr;</a>
+          <a class="btn btn-primary float-left" href="{{prev}}"> &larr; Previous </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock body %}

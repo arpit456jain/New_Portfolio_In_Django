@@ -1,0 +1,42 @@
+
+a
+{
+	text-decoration: none;
+}
+.headerset
+{
+	padding-top:15%;
+	box-sizing: border-box; 
+}
+.headerset h3
+{
+	font-size: 1.4rem;
+}
+.headerset h1
+{
+	font-size: 4rem;
+	font-weight: bold;
+}
+
+.rowsetting
+{
+	margin: 80px 0px;
+	padding: 10px;
+}
+.imgsetting
+{
+	height: 15vh;
+	color: #fff;	
+	width: 15vh;
+}
+.fa-shopping-cart
+{
+	margin-top: 20px;
+}
+.card
+{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: none;	
+}
+  

@@ -1,0 +1,107 @@
+{% extends 'base2.html' %}
+{% block title %} Django Projects
+{% endblock title %}
+
+
+{% block djangoactive %}
+menu-active
+{% endblock djangoactive %}
+{% block body %}
+{% load static %}
+<section id="intro" style="background: url('static/img/bg/bg1.jpg') top center;width: 100%;height: 100vh;  
+  background-size: cover; overflow: hidden; position: relative;">
+    <div class="intro-container wow fadeIn">
+      <h1 class="mb-4 pb-0">Django Projects<br><span>Marketing</span> Conference</h1>
+      <p class="mb-4 pb-0">10-12 December, Downtown Conference Center, New York</p>
+      <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
+        data-autoplay="true"></a>
+      <a href="/about" class="about-btn scrollto">About Me</a>
+    </div>
+  </section>
+{% static 'img/djangoProjects' as baseurl %}
+<div class="container text-center my-4 myworksample px-0">
+    <h1 class="mb-5">My Work samples</h1>
+    <p>Every day i am learning some new things and trying to improve all my previous work with new projects
+        which are listed below you can visit each of my template just click on it and check it right now</p>
+</div>
+<div class="container">
+    <div class="row  mx-auto mt-2" id="mycards">
+        <!-- cards will appear hre by js -->
+        
+        <div class="col col-lg-4 my-1">
+            <div class="card" style="width: 18rem;background-color:#6eff0085">
+            <img src="{{baseurl}}/calc.png" class="card-img-top" alt="...">  
+            <div class="card-body">
+                <a href="/calculator/"><h5 class="card-title">Calculator App</h5></a>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="https://github.com/arpit456jain/All-StandAlone-Django-Projects/tree/master/Calculator" class="btn btn-primary">Source Code</a>
+            </div>
+        </div>
+        </div>
+        
+        <div class="col col-lg-4 my-1">
+        <div class="card" style="width: 18rem;background-color:#6eff0085">
+            <img src="{{baseurl}}/string.png" class="card-img-top" alt="...">  
+            <div class="card-body">
+                <a href="/stringAnalyzer/"><h5 class="card-title">String Analyzer App</h5></a>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="https://github.com/arpit456jain/All-StandAlone-Django-Projects/tree/master/stringanalyser" class="btn btn-primary">Source Code</a>
+            </div>
+        </div>
+        </div>
+
+         <div class="col col-lg-4 my-1">
+        <div class="card" style="width: 18rem;background-color:#6eff0085">
+            <img src="{{baseurl}}/blog.png" class="card-img-top" alt="...">  
+            <div class="card-body">
+                <a href="/myblog/"><h5 class="card-title">CodeSmashers Blog</h5></a>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="https://github.com/arpit456jain/-CodesmashersBlog-In-Django" class="btn btn-primary">Source Code</a>
+            </div>
+        </div>
+        </div>
+        
+        <div class="col col-lg-4 my-1">
+        <div class="card" style="width: 18rem;background-color:#6eff0085">
+            <img src="{{baseurl}}/todolist.png" class="card-img-top" alt="...">  
+            <div class="card-body">
+                <a href="/ToDoListApp/"><h5 class="card-title">ToDoList App</h5></a>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="https://github.com/arpit456jain/All-StandAlone-Django-Projects/tree/master/ToDoList" class="btn btn-primary">Source Code</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="col col-lg-4 my-1">
+        <div class="card" style="width: 18rem;background-color:#6eff0085">
+            <img src="{{baseurl}}/MYDG.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <a href="/ourteams/"><h5 class="card-title">MyDynamicGallery</h5></a>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="https://github.com/arpit456jain/My-Dynamic-Gallery-In-Django/tree/master/MyDynamicGallery" class="btn btn-primary">Source Code</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="col col-lg-4 my-1">
+        <div class="card" style="width: 18rem;background-color:#6eff0085">
+            <img src="{{baseurl}}/string.png" class="card-img-top" alt="...">  
+            <div class="card-body">
+                <a href="/votingPollApp/"><h5 class="card-title">VotingPoll App</h5></a>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="https://github.com/arpit456jain/All-StandAlone-Django-Projects/tree/master/votingPoll" class="btn btn-primary">Source Code</a>
+            </div>
+        </div>
+        </div>
+        
+
+    </div>
+</div>
+
+{% endblock body %}

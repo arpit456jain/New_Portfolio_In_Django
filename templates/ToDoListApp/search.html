@@ -1,0 +1,78 @@
+{% extends 'base3.html' %}
+{% block title %}ToDoListApp App-Search{% endblock title %}
+{% block projectname %} <a href="/ToDoListApp ">ToDoListApp App</a> {% endblock projectname %}
+
+{% block feedback %}{% endblock feedback %}
+{% block extranavs %}
+<li class="nav-item menu-active" >
+        <a class="nav-link" href="/ToDoListApp/task">Task</a>
+      </li>
+{% endblock extranavs %}
+{% block searchbar %}
+<form class="d-flex" action="/ToDoListApp/search/">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+{% endblock searchbar %}
+
+{% block ToDoListjs %}
+ <!-- these are for todolistapp -->
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#myTable').DataTable();
+    });  
+  </script>
+{% endblock ToDoListjs %}
+
+{% block body %}
+
+
+<section id="intro" style="background: url('/static/img/bg/bg1.jpg') top center;width: 100%;height: 100vh;  
+  background-size: cover; overflow: hidden; position: relative;">
+    <div class="intro-container wow fadeIn">
+      <h1 class="mb-4 pb-0">My ToDoListApp<br><span>Search page</span> Conference</h1>
+      <p class="mb-4 pb-0">10-12 December, Downtown Conference Center, New York</p>
+      
+      <a href="/about" class="about-btn scrollto">About Me</a>
+    </div>
+  </section>
+
+<div class="container my-5">
+    <h2 class="text-center my-2">Search Results - AllTasks </h2>
+    <table class="table" id="myTable">
+  <thead>
+    <tr>
+      <th scope="col">+</th>
+      <th scope="col">TAST TITLE</th>
+      <th scope="col">TASK DESC</th>
+      {% comment %} <th scope="col">Handle</th> {% endcomment %}
+    </tr>
+  </thead>
+  <tbody>
+  {% for task in alltasks %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      {% comment %} <th scope="row">{{task.id}}</th> {% endcomment %}
+      <td>{{task.taskTitle}}</td>
+      <td colspan=2>{{task.TaskDesc}}</td>
+      
+    </tr>
+    
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+<br>
+<br>
+
+
+{% endblock body %}

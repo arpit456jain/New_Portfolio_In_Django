@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% block title %}Edit{% endblock title %}
+{% block css %}
+.cur-img img
+{
+{% comment %} width: 80%; {% endcomment %}
+height: 18rem;
+}
+.our-team .pic img{
+{% comment %} width: 100%; {% endcomment %}
+height: 20rem;
+}
+{% endblock css %}
+{% block body %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+{% comment %} {{member.name}}{{member.img}} {% endcomment %}
+{% load static %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12 mx-auto my-3">
+      <h3 class="text-center">Edit Details</h3>
+      <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"><b> Name </b></label>
+          <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name='name'
+            value="{{member.name}}" oninput="myFunction()">
+
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"><b>Email address</b></label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name='email'
+            value="{{member.email}}" oninput="myFunction()">
+
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"><b>Mobile number</b></label>
+          <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='number' value="{{member.phone_number}}" oninput="myFunction()">
+        </div>
+        <div class="mb-3 cur-img">
+          <label for="exampleInputEmail1" class="form-label"><b>Current Img</b></label><br>
+          <img src="/{{member.img}}" alt="not found" id="cur_img" class="img-fluid">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"><b>Choose New Img</b></label>
+          <input type='file' class="form-control" id="new_img" aria-describedby="emailHelp" name='newimg'
+            onchange="readURL(this);" />
+
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"><b>Job Role</b></label>
+          <input type="text" class="form-control" id="jobrole" aria-describedby="emailHelp" name='jobrole' value="{{member.jobrole}}" oninput="myFunction()">
+
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"><b>Fb Profile</b></label>
+          <input type="text" class="form-control" id="fb_url" aria-describedby="emailHelp" name='fb_url' value="{{member.fb_url}}" oninput="myFunction()">
+
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"><b>Insta Profile</b></label>
+          <input type="text" class="form-control" id="insta_url" aria-describedby="emailHelp" name='insta_url' value="{{member.insta_url}}" oninput="myFunction()">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"><b>Git Hub Profile</b></label>
+          <input type="text" class="form-control" id="github_url" aria-describedby="emailHelp"
+            name='github_url' value="{{member.github_url}}" oninput="myFunction()">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"><b>Linkedin Profile</b></label>
+          <input type="text" class="form-control" id="linkedn_url" aria-describedby="emailHelp"
+            name='linkedn_url' value="{{member.linkedn_url}}" oninput="myFunction()">
+        </div>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </form>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-10 mx-auto mt-3 mb-5 pb-5 px-5">
+      <h3 class="text-center">Preview</h3>
+      <div class="our-team">
+        <div class="pic">
+
+          <img id="blah" src="" class="img-responsive" alt="your image" />
+          <ul class="social">
+            <li><a href="" id="preview_fb_url"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="" id="preview_github_url"><i class="fa fa-github"></i></a></li>
+            <li><a href="" id="preview_insta_url"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="" id="preview_linkedin_url"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+        <div class="team-content">
+          <h3 class="title" id="preview_name"></h3>
+          <small class="post" id="preview_jobrole"></small>
+          <small>Email: <b id="preview_email"></b></small>
+        </div>
+        <div class="team-layer">
+          <a href="#">{{member.name}}</a>
+          <span class="post" id="preview_jobrole"></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var jobrole = document.getElementById('jobrole').value;
+  var fb_url = document.getElementById('fb_url').value;
+  var insta_url = document.getElementById('insta_url').value;
+  var github_url = document.getElementById('github_url').value;
+  var linkedn_url = document.getElementById('linkedn_url').value;
+
+  var cur_img = document.getElementById('cur_img')
+  var preview_name = document.getElementById('preview_name');
+  var preview_email = document.getElementById('preview_email');
+  var preview_img = document.getElementById('blah');
+  var preview_jobrole = document.getElementById('preview_jobrole');
+
+  var preview_fb_url = document.getElementById('preview_fb_url');
+  var preview_insta_url = document.getElementById('preview_insta_url');
+  var preview_github_url = document.getElementById('preview_github_url');
+  var preview_linkedin_url = document.getElementById('preview_linkedin_url'); 
+  console.log('hello', name, email, cur_img.src,jobrole)
+  {% comment %} console.log(insta_url,github_url,linkedn_url); {% endcomment %}
+  preview_img.src = cur_img.src;
+  
+  preview_name.innerHTML = name;
+  preview_email.innerHTML = email;
+  preview_jobrole.innerHTML = jobrole;
+  preview_fb_url.href = fb_url;
+  preview_insta_url.href = insta_url;
+  preview_github_url.href = github_url;
+  preview_linkedin_url.href = linkedn_url;
+
+  function myFunction() {
+    console.log('fun called')
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var jobrole = document.getElementById('jobrole').value;
+    var fb_url = document.getElementById('fb_url').value;
+  var insta_url = document.getElementById('insta_url').value;
+  var github_url = document.getElementById('github_url').value;
+  var linkedn_url = document.getElementById('linkedn_url').value;
+
+    preview_name.innerHTML = name;
+    preview_email.innerHTML = email;
+    preview_jobrole.innerHTML = jobrole;
+    preview_fb_url.href = fb_url;
+    preview_insta_url.href = insta_url;
+    preview_github_url.href = github_url;
+    preview_linkedin_url.href = linkedn_url;
+
+    
+
+  }
+
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#blah')
+          .attr('src', e.target.result);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
+{% endblock body %}

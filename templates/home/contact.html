@@ -1,0 +1,63 @@
+{% extends 'base2.html' %}
+{% block title %} contact
+{% endblock title %}
+
+{% block contactactive %}
+menu-active
+{% endblock contactactive %}
+
+{% block body %}
+
+<section id="intro" style="background: url('/static/img/bg/bg1.jpg') top center;width: 100%;height: 100vh;  
+  background-size: cover; overflow: hidden; position: relative;">
+  
+    <div class="intro-container wow fadeIn">
+      <h1 class="mb-4 pb-0">Contact Me<br><span>Marketing</span> Conference</h1>
+      <p class="mb-4 pb-0">10-12 December, Downtown Conference Center, New York</p>
+      <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
+        data-autoplay="true"></a>
+      <a href="/about" class="about-btn scrollto">About Me</a>
+    </div>
+  </section>
+<!-- contact us -->
+  <div class="container mt-3 mb-3 col-lg-6 col-10 mx-auto bg-info pb-2  " >
+    <h1 class="text-center">Contact Me</h1>
+    <hr>
+    <form action="/contact" method="POST">
+     {% csrf_token %}
+      <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="enter your name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+            <label for="number">Number</label>
+            <input type="number" class="form-control" id="number" name="number" placeholder="Enter number">
+        </div>
+        
+ <div class="form-group">
+            <label for="content">Your Message!!</label>
+            <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+        </div>
+       
+  <div class="  form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Rember ME</label>
+  </div>
+  <button type="submit" class="btn btn-warning">Submit</button>
+</form>
+  </div>
+<div class="container">
+
+    <form method="post" action="/contact">
+        {% csrf_token %}
+       
+
+
+        
+    </form>
+</div>
+{% endblock body %}
