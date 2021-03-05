@@ -23,7 +23,7 @@ menu-active
   <div class="container mt-3 mb-3 col-lg-6 col-10 mx-auto bg-info pb-2  " >
     <h1 class="text-center">Contact Me</h1>
     <hr>
-    <form action="/contact" method="POST">
+    <form action="/contact/" method="POST">
      {% csrf_token %}
       <div class="form-group">
             <label for="name">Your Name</label>
@@ -34,8 +34,8 @@ menu-active
             <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
         </div>
         <div class="form-group">
-            <label for="number">Number</label>
-            <input type="number" class="form-control" id="number" name="number" placeholder="Enter number">
+            <label for="tel">Number</label>
+            <input type="tel" class="form-control" id="number" name="number" placeholder="Enter number">
         </div>
         
  <div class="form-group">
