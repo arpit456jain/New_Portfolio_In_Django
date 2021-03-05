@@ -6,7 +6,15 @@ menu-active
 {% endblock homeactive %}
 
 {% block mycss %}
-
+p
+{
+  font-weight:500;
+}
+div
+{
+  overflow:hidden;  
+}
+{% endblock}
 {% endblock mycss %}
 
 {% block body %}
@@ -16,8 +24,8 @@ menu-active
 <section id="intro" style="background: url('static/img/bg/bg1.jpg') top center;width: 100%;height: 100vh;  
   background-size: cover; overflow: hidden; position: relative;">
     <div class="intro-container wow fadeIn">
-      <h1 class="mb-4 pb-0">CodeSmashers<br><span>Marketing</span> Conference</h1>
-      <p class="mb-4 pb-0">10-12 December, Downtown Conference Center, New York</p>
+      <h1 class="mb-4 pb-0">Welcome to<br><span>CodeSmashers</span></h1>
+      <p class="mb-4 pb-0">This is the home page of my website Hope you like it!! </p>
       <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
         data-autoplay="true"></a>
       <a href="/about" class="about-btn scrollto">About Me</a>
@@ -25,7 +33,7 @@ menu-active
   </section>
 
 <section class="container text-center my-5 py-4">
-  <h1>SKILLS</h1>
+  <h1>My SKILLS</h1>
   <p>These are some of my skills i had learned so far.But i am still because <br> learning is the process which never
     ends!!</p>
 
@@ -34,7 +42,7 @@ menu-active
       <div class="imgsetting d-block m-auto">
         <img src="{{baseurl}}/C++.png" class="img-fluid">
       </div>
-      <h2 class="mt-3">C,C++</h2>
+      <h2 class="mt-3">Competitive Coding</h2>
       <p>Well we all know the importane of C and C++ although its very old but it is still in use which implies its
         importance</p>
     </div>
@@ -42,7 +50,7 @@ menu-active
       <div class="imgsetting d-block m-auto">
         <img src="{{baseurl}}/webd.png" class="img-fluid" style="width: 20vh;height: 15vh;">
       </div>
-      <h2 class="mt-3">Html,Css,Js</h2>
+      <h2 class="mt-3">Web Development</h2>
       <p>It is the basic building block of Web Development every person should know the basics of html,css,and js</p>
     </div>
 
@@ -57,7 +65,7 @@ menu-active
   </div>
   <div class="col-lg-4 col-md-4 col-10 d-block m-auto mb-5">
     <h2>And Much More</h2>
-    <a href="/portfolio" class="btn btn-primary">Go to my Portfoilio</a>
+    <a href="/portfolio" class="btn btn-primary"><b>Check Out My Portfoilio</b></a>
   </div>
 
 
@@ -93,13 +101,15 @@ menu-active
       </figure>
     </div>
     <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
+    <a href="/portfolio" style="color:black">
       <figure class="figure">
         <img src="{{baseurl2}}/next.jpg" class="img-fluid figure-img rounded-circle">
         <figcaption>
-          <h4>Wating for the next</h4>
-          <p>I am eagerly waiting for the next internship because i belive in skills and experience</p>
+          <h4>And Much More</h4>
+          <p>There is lot of things you don't know about me Check out my Portfolio for more information</p>
         </figcaption>
       </figure>
+    </a>
     </div>
   </div>
 </div>
