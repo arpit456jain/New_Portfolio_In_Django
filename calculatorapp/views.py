@@ -7,9 +7,9 @@ from django.contrib import messages
 def connectTOMail():
     con = smtplib.SMTP("smtp.gmail.com",587)
     con.ehlo()
-    print("hello sucessfull")
+    # print("hello sucessfull")
     con.starttls()
-    con.login("arpit456jain@gmail.com","#vanshika jain#")
+    con.login("arpit456jain@gmail.com","#asdfghjkl#")
     print("login succesfull")
     return con
 
@@ -22,7 +22,7 @@ def calculate(request):
     if request.method == 'POST':
         print("post method")
         equation = request.POST['equation']
-        print(equation)
+        # print(equation)
         # Exception Handling
         try:
             ans = eval(equation)
@@ -41,15 +41,15 @@ def feedback(request):
             name = request.POST['name']
             email = request.POST['email']
 
-            print(name,email,feedback)
+            # print(name,email,feedback)
             
             con = connectTOMail()
+            con.sendmail("arpit456jain@gmail.com",email,"Subject:Feed Back of Calculator app \n\n"+"Thank You for the feed back")
             obj = UserFeedback(name=name,email=email,msg=feedback)
             obj.save()
-            # con.sendmail("arpit456jain@gmail.com",email,"Subject:Feed Back of Calculator app \n\n"+"Thank You for the feed back")
             messages.success(request,'Thank You! Your feedback is very precious to us.')
-        except:
-            messages.error(request,'Some Error occured please try again!')
+        except Exception as e:
+            messages.error(request,'Some Error occured '+str(e)+' please try again!')
     else:
         pass
         

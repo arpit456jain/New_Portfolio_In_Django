@@ -10,13 +10,13 @@
 <section id="intro" style="background: url('/static/img/bg/bg1.jpg') top center;width: 100%;height: 100vh;  
   background-size: cover; overflow: hidden; position: relative;">
     <div class="intro-container wow fadeIn">
-      <h1 class="mb-4 pb-0">My StringAnalyzerApp App<br><span>FeedBack</span> Conference</h1>
-      <p class="mb-4 pb-0">10-12 December, Downtown Conference Center, New York</p>
+      <h1 class="mb-4 pb-0">StringAnalyzer App<br><span>FeedBack</span> <br> Page</h1>
+      <p class="mb-4 pb-0">Give me your feedback and suggestions.It will help me a lot.</p>
       
       <a href="/about" class="about-btn scrollto">About Me</a>
     </div>
   </section>
-    <div class="container my-5 col-6">
+    <div class="container my-5 col-lg-6 col-sm-11">
         <h1>Enter your Valuable feed back here!!</h1>
         <form action="" method="POST">
             {% csrf_token %}
@@ -33,6 +33,9 @@
             <div class="mb-3">
                 <textarea class="form-control" id="equation" rows="5" name="feedback" placeholder="enter your feedback here">
                 </textarea>
+                <script>
+                document.getElementById('equation').value ="";
+                </script>
             </div>  
             <button type="submit" class="btn btn-primary">Send</button>
         </form>

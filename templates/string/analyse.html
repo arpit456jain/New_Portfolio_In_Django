@@ -1,7 +1,7 @@
 {% extends 'string/base.html' %}
 {% block title %}Analyse page
 {% endblock title %}
-
+{% block projectname %} <a href="/stringAnalyzer/">My StringAnalyzerApp</a> {% endblock projectname %}
  {% block body %}
   <div class="alert alert-success alert-dismissible fade show" role="alert">
   <strong>Conngrats!!   {{user.first_name}}</strong> You text has been analysed.

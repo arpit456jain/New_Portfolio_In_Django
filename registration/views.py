@@ -38,7 +38,7 @@ def signup(request):
     return render(request,'string/signup.html')
 
 def login(request):
-    # return HttpResponse('login')
+    print("inside login")
     if request.method == 'POST':
         # print('post')
         username = request.POST['username']
@@ -52,7 +52,7 @@ def login(request):
             if user == None:
                 # print('no acount')
                 messages.error(request,'There is no account with this username Please Sign Up first!!')
-                return redirect('/stringAnalyzer/registration/')
+                return redirect('/stringAnalyzer/registration/signup/')
             else:
                 # print('okay you can login')
                 auth.login(request,user)

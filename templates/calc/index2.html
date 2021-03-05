@@ -1,6 +1,6 @@
 {% extends 'base3.html' %}
 {% block title %}Calculator App{% endblock title %}
-{% block projectname %} <a href="/calculator/">My Calculator App</a> {% endblock projectname %}
+{% block projectname %} <a href="/calculator/" >Calculator App</a> {% endblock projectname %}
 {% block homeactive %}menu-active{% endblock homeactive %}
 {% block feedback %}<li><a href="/calculator/feedback">FeedBack</a></li>{% endblock feedback %}
 
@@ -9,8 +9,8 @@
 <section id="intro" style="background: url('/static/img/bg/bg1.jpg') top center;width: 100%;height: 100vh;  
   background-size: cover; overflow: hidden; position: relative;">
     <div class="intro-container wow fadeIn">
-      <h1 class="mb-4 pb-0">My Calculator Poll App<br><span>Marketing</span> Conference</h1>
-      <p class="mb-4 pb-0">10-12 December, Downtown Conference Center, New York</p>
+      <h1 class="mb-4 pb-0">My <span>Calculator <br></span> App</h1>
+      <p class="mb-4 pb-0">A small project just for fun.Have a try !!</p>
       
       <a href="/about" class="about-btn scrollto">About Me</a>
     </div>
@@ -23,7 +23,7 @@
 
   
 
-  <div class="container mt-5 col-6">
+  <div class="container mt-5 col-lg-6 col-sm-11">
     <h4>Enter the equation to solve</h4>
     <form action="calculate" method="POST">
       {% csrf_token %}

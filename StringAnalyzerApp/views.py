@@ -1,6 +1,6 @@
 # i have created this -file Arpit Jain
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 import string
 import smtplib #for email
 from StringAnalyzerApp.models import UserFeedback
@@ -11,7 +11,7 @@ def connectTOMail():
     con.ehlo()
     # print("hello sucessfull")
     con.starttls()
-    # con.login("arpit456jain@gmail.com","#vanshika jain#")
+    con.login("arpit456jain@gmail.com","#asdfghjkl#")
     print("login succesfull")
     return con
 
@@ -111,7 +111,7 @@ def analyse(request):
 
 
 def feedback(request):
-    
+      
     if request.method == 'POST':
        
         feedback = request.POST['feedback']
@@ -120,11 +120,12 @@ def feedback(request):
 
         print(name,email,feedback)
         
-        # con = connectTOMail()
+        con = connectTOMail()
         obj = UserFeedback(name=name,email=email,msg=feedback)
         obj.save()
-        # con.sendmail("arpit456jain@gmail.com",email,"Subject:Feed Back of Calculator app \n\n"+"Thank You for the feed back")
+        con.sendmail("arpit456jain@gmail.com",email,"Subject:Feed Back of Calculator app \n\n"+"Thank You for the feed back")
         messages.success(request,"Thank You for contacting me Your Feedback is very precious to me!")
+        return redirect(request,"/stringAnalyzer/feedback/")
     else:
         pass
     

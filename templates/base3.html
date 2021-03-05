@@ -42,8 +42,24 @@
       {
       % endblock mycss %
     }
-
-    #intro {}
+    a
+    {
+      color:#fff;
+      font-weight:bold 
+    }
+    .myalert
+    {
+      margin-top:14vh;
+      margin-bottom:0vh;
+    }
+    @media only screen and (max-width:600px)
+    {
+      .myalert
+      {
+        margin-top:8vh;
+        margin-bottom:0vh;
+      }
+    }
   </style>
 </head>
 
@@ -80,11 +96,14 @@
   </header><!-- #header -->
 
 
+  {% comment %} <div class="alert myalert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{message.tags}}</strong> Thank you
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div> {% endcomment %}
 
   {% for message in messages %}
-  <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert"
-    style="margin-top:15vh;margin-bottom:0vh;">
-    <strong>{{message.tags}}</strong> {{message}}
+  <div class="alert myalert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+    <strong></strong> {{message}}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
   {% endfor %}
