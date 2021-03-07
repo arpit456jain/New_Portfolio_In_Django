@@ -3,14 +3,14 @@
 {% endblock title %}
 {% block projectname %} <a href="/stringAnalyzer/">My StringAnalyzerApp</a> {% endblock projectname %}
 
-{% block feedback %}<li><a href="/stringAnalyzer/feedback">FeedBack</a></li>{% endblock feedback %}
+{% block feedback %}<li class="menu-active"><a href="/stringAnalyzer/feedback">FeedBack</a></li>{% endblock feedback %}
 
 {% block body  %}
 
 <section id="intro" style="background: url('/static/img/bg/bg1.jpg') top center;width: 100%;height: 100vh;  
   background-size: cover; overflow: hidden; position: relative;">
     <div class="intro-container wow fadeIn">
-      <h1 class="mb-4 pb-0">StringAnalyzer App<br><span>FeedBack</span> <br> Page</h1>
+      <h1 class="mb-4 pb-0">StringAnalyzer App<br><span>FeedBack</span> Page</h1>
       <p class="mb-4 pb-0">Give me your feedback and suggestions.It will help me a lot.</p>
       
       <a href="/about" class="about-btn scrollto">About Me</a>
@@ -22,16 +22,20 @@
             {% csrf_token %}
             <div class="mb-3">
                 <label for="name" class="form-label">Your Full Name</label>
-                <input type="text" class="form-control" id="name" placeholder="enter your full name" name="name">
+                <input type="text" class="form-control" id="name" placeholder="enter your full name" name="name" required>
+            </div>  
+            <div class="mb-3">
+                <label for="name" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="name" placeholder="enter your full name" name="number" required>
             </div>  
             
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+                <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" required>
             </div>
             
             <div class="mb-3">
-                <textarea class="form-control" id="equation" rows="5" name="feedback" placeholder="enter your feedback here">
+                <textarea class="form-control" id="equation" rows="5" name="feedback" placeholder="enter your feedback here" required>
                 </textarea>
                 <script>
                 document.getElementById('equation').value ="";

@@ -12,42 +12,42 @@ menu-active
   background-size: cover; overflow: hidden; position: relative;">
   
     <div class="intro-container wow fadeIn">
-      <h1 class="mb-4 pb-0">Contact Me<br><span>Marketing</span> Conference</h1>
-      <p class="mb-4 pb-0">10-12 December, Downtown Conference Center, New York</p>
+      <h1 class="mb-4 pb-0">Feel Free to<br><span>Contact Me</span> </h1>
+      <p class="mb-4 pb-0">You can contact me by filling the form right here or you can whatsapp me directly with the icon showing at bottom right.</p>
       <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
         data-autoplay="true"></a>
       <a href="/about" class="about-btn scrollto">About Me</a>
     </div>
   </section>
 <!-- contact us -->
-  <div class="container mt-3 mb-3 col-lg-6 col-10 mx-auto bg-info pb-2  " >
+  <div class="container col-lg-6 col-10 mx-auto bg-info py-3" >
     <h1 class="text-center">Contact Me</h1>
     <hr>
     <form action="/contact/" method="POST">
      {% csrf_token %}
       <div class="form-group">
             <label for="name">Your Name</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="enter your name">
+            <input type="text" class="form-control" id="name" name="name" placeholder="enter your name" required>
         </div>
         <div class="form-group">
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
         </div>
         <div class="form-group">
             <label for="tel">Number</label>
-            <input type="tel" class="form-control" id="number" name="number" placeholder="Enter number">
+            <input type="tel" class="form-control" id="number" name="number" placeholder="Enter number" required>
         </div>
         
  <div class="form-group">
             <label for="content">Your Message!!</label>
-            <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+            <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
         </div>
        
   <div class="  form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
     <label class="form-check-label" for="exampleCheck1">Rember ME</label>
   </div>
-  <button type="submit" class="btn btn-warning">Submit</button>
+  <button type="submit" class="btn btn-warning mt-2">Submit</button>
 </form>
   </div>
 <div class="container">

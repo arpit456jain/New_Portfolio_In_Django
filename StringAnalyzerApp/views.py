@@ -117,15 +117,15 @@ def feedback(request):
         feedback = request.POST['feedback']
         name = request.POST['name']
         email = request.POST['email']
-
-        print(name,email,feedback)
+        number = request.POST['number']
+        # print(name,email,feedback)
         
         con = connectTOMail()
         obj = UserFeedback(name=name,email=email,msg=feedback)
         obj.save()
         con.sendmail("arpit456jain@gmail.com",email,"Subject:Feed Back of Calculator app \n\n"+"Thank You for the feed back")
         messages.success(request,"Thank You for contacting me Your Feedback is very precious to me!")
-        return redirect(request,"/stringAnalyzer/feedback/")
+        return redirect("/stringAnalyzer/feedback")
     else:
         pass
     

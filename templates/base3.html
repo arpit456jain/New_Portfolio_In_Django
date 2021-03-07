@@ -42,6 +42,11 @@
       {
       % endblock mycss %
     }
+    input[type="search"]
+    {
+      {% comment %} margin-top:1vh; {% endcomment %}
+      padding:7px;
+    }
     a
     {
       color:#fff;
@@ -49,8 +54,11 @@
     }
     .myalert
     {
+      position: absolute;
+      z-index:2;
       margin-top:14vh;
       margin-bottom:0vh;
+      width:99vw;
     }
     @media only screen and (max-width:600px)
     {
@@ -82,9 +90,12 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="{% block homeactive %}{% endblock homeactive %}"><a href="/">Home</a></li>
-          <li class="{% block aboutactive %}{% endblock aboutactive %}"><a href="/about">About Me</a></li>
-          <li class="{% block contactactive %}{% endblock contactactive %}"><a href="/contact">Contact Me</a></li>
+          <li class="{% block homeactive %}{% endblock homeactive %}"><a href="/">Home</a>
+          </li>
+          <li class="{% block aboutactive %}{% endblock aboutactive %}"><a href="/about">About Me</a>
+          </li>
+          <li class="{% block contactactive %}{% endblock contactactive %}"><a href="/contact">Contact Me</a>
+          </li>
           {% block feedback %}{% endblock feedback %}
           <li class=""><a href="/djangoProjects">Other Django Projects</a></li>
           {% block extranavs %}{% endblock extranavs %}
@@ -96,10 +107,6 @@
   </header><!-- #header -->
 
 
-  {% comment %} <div class="alert myalert alert-success alert-dismissible fade show" role="alert">
-    <strong>{{message.tags}}</strong> Thank you
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div> {% endcomment %}
 
   {% for message in messages %}
   <div class="alert myalert alert-{{message.tags}} alert-dismissible fade show" role="alert">
@@ -119,14 +126,18 @@
   <!--==========================
     Footer
   ============================-->
-<footer id="footer">
+<!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
     <div class="footer-top">
       <div class="container">
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
             <h1><a href="/" style="color:white;">Code<span style="color:red">Smashers</span></a></h1>
-            <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate cupiditate debitis accusamus repellat cumque.</p>
+            <p>This is not just a website, it's a dream project,whenever i create any project i always wanted to show it to others but it's very difficult for me to do that because i had no platform for sharing my projects and showcase my skils that's why i always wanted a website or PortFolio where i can show my all skils,experience,certificates,Profiles and Achievements on different platforms.This is the reason i created this website as my Dream Project. 
+            </p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
@@ -135,6 +146,7 @@
               <li><i class="fa fa-angle-right"></i> <a href="/">Home</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="/portfolio">PortFolio</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="/worksample">Front-End Worksample</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="/djangoProjects">Django Projects</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="/about">About Me</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="/contact">Contact Me</a></li>
             </ul>

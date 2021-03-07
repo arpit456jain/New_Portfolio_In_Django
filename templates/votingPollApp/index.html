@@ -2,22 +2,23 @@
 {% block title %}My VotingPoll App{% endblock title %}
 {% block projectname %} <a href="/votingPollApp">My VotingPoll App</a> {% endblock projectname %}
 {% block body %}
-{% block homeactive %}menu-active{% endblock homeactive %}
+
 {% block feedback %}<li><a href="/votingPollApp/feedback">FeedBack</a></li>{% endblock feedback %}<li class="menu-active"><a href="/votingPollApp/feedback">FeedBack</a></li>
 <section id="intro" style="background: url('/static/img/bg/bg1.jpg') top center;width: 100%;height: 100vh;  
   background-size: cover; overflow: hidden; position: relative;">
     <div class="intro-container wow fadeIn">
-      <h1 class="mb-4 pb-0">My Voting Poll App<br><span>Marketing</span> Conference</h1>
-      <p class="mb-4 pb-0">10-12 December, Downtown Conference Center, New York</p>
+      <h1 class="mb-4 pb-0">My <br><span>Voting Poll App</span></h1>
+      <p class="mb-4 pb-0">Its a simple and basic app of voting just select the language and vote for it.But i am thiking to add some functionality so that one user can vote only once.   </p>
       
       <a href="/about" class="about-btn scrollto">About Me</a>
     </div>
   </section>
 
 
-    <div class="container my-2 py-2">
+    <div class="container col-lg-6 col-11 my-2 py-2">
     <h1 class="text-center">Select You Languages and Vote for it</h1>
-        <form method="get" action="getQuery">
+    {{languages}}
+        <form method="get" action="getQuery" class="my-3">
             <input list = "languages" class="form-control" name="languages">
             <datalist id="languages">
             {% for lang in languages %}
@@ -28,8 +29,8 @@
         </form>
     </div>
 
-    <div class="container">
-    <h1 class="text-center"><span class="badge bg-success" style="width:90vw" >Result Table</span></h1>
+    <div class="container col-lg-6 col-11">
+    <h1 class="text-center"><span class="badge bg-success" style="width:99%;" >Result Table</span></h1>
         <table class="table">
   <thead>
     <tr>

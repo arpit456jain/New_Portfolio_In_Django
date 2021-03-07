@@ -7,15 +7,17 @@ from django.contrib import messages
 # Create your views here.
 global count_freq
 count_freq = dict()
-languages = ['Java','Python','C++','C','PHP']
+languages_for_checking = ['java','python','c++','c','php','perl',"kotlin","dart"]
+languages = ['Java','Python','C++','C','Php','Perl',"Kotlin","Dart"]
 def index(request):
     params = {'languages':languages}
     return render(request, 'votingPollApp/index.html',params)
 
 def getQuery(request):
     q = request.GET['languages']
+    q = q.lower()
     #using hashing we count freq of voting 
-    if q in languages:    
+    if q in languages_for_checking:    
         if q in count_freq.keys():
             count_freq[q] +=1
         else:
@@ -34,8 +36,8 @@ def connectTOMail():
     con.ehlo()
     print("hello sucessfull")
     con.starttls()
-    # con.login("arpit456jain@gmail.com","#vanshika jain#")
-    # print("login succesfull")
+    con.login("arpit456jain@gmail.com","#asdfghjkl#")
+    print("login succesfull")
     return con
 
 
@@ -49,10 +51,10 @@ def feedback(request):
 
         print(name,email,feedback)
         
-        # con = connectTOMail()
+        con = connectTOMail()
         obj = UserFeedback(name=name,email=email,msg=feedback)
         obj.save()
-        # con.sendmail("arpit456jain@gmail.com",email,"Subject:Feed Back of Calculator app \n\n"+"Thank You for the feed back")
+        con.sendmail("arpit456jain@gmail.com",email,"Subject:Feed Back of Calculator app \n\n"+"Thank You for the feed back")
         messages.success(request,"Thank You! Your feedback is very precious to us.")
     else:
         pass

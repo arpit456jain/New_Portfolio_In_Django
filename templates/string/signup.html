@@ -18,31 +18,31 @@
   </section>
 
 <div class="container my-5">
-   <h1 class="text-center">Register here</h1>
+   <h1 class="text-center">Sign Up here</h1>
   <form method="post" action="/stringAnalyzer/registration/signup/">
   {% csrf_token %}
-  <div class="form-group">
+  <div class="form-group my-1 py-1">
     <label for="fname">First Name</label>
     <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp" required>
   </div>  
-  <div class="form-group">
+  <div class="form-group my-1 py-1">
     <label for="uname">User Name</label>
     <input type="text" class="form-control" id="uname" name="uname" aria-describedby="emailHelp" required>
   </div>
-  <div class="form-group">
+  <div class="form-group my-1 py-1">
     <label for="email">Email address</label>
     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
   </div>
-  <div class="form-group">
+  <div class="form-group my-1 py-1">
     <label for="password">Password</label>
     <input type="password" class="form-control" id="password" name="password" required>
   </div>
-  <div class="form-group">
+  <div class="form-group my-1 py-1">
     <label for="cpassword">Confirm Password</label>
     <input type="password" class="form-control" id="cpassword" name="cpassword" required>
   </div>
   
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary mt-2">Sign Up</button>
 </form>
   </div>
 {% endblock body %}

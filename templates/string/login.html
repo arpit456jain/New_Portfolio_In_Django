@@ -18,25 +18,25 @@
     </div>
   </section>
 
-<div class="container my-5">
+<div class="container col-lg-6 col-sm-11 my-5">
 <h1 class="text-center">
     Login here
 </h1>
     <form action="/stringAnalyzer/registration/login/" method="post">
     {% csrf_token %}
-  <div class="form-group">
-    <label for="username">User Name</label>
-    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+  <div class="form-group my-1 py-1">
+    <label for="username" class="my-2">User Name</label>
+    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" required>
   </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" name="password">
+  <div class="form-group my-1 py-1">
+    <label for="password "class="my-2">Password</label>
+    <input type="password" class="form-control" id="password" name="password" required>
   </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+  <div class="form-group form-check my-2">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Login</button>
 </form>
 </div>
 {% endblock body %}
