@@ -173,7 +173,7 @@ def blogPost(request, slug):
     print(replyDict)
     context={'post':post, 'comments': comments, 'user': request.user,'replyDict':replyDict}
     # context={"post":post}
-    return render(request,'/myblog/home/blogPost.html',context)
+    return render(request,'myblog/home/blogPost.html',context)
 
 def postComment(request):
     if request.method == "POST":
