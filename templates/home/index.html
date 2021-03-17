@@ -56,8 +56,8 @@ margin-top: 10vh;
   <div class="intro-container wow fadeIn">
     <h1 class="mb-4 pb-0">Welcome to<br><span>CodeSmashers</span></h1>
     <p class="mb-4 pb-0">This is the home page of my website Hope you like it!! </p>
-    <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
-      data-autoplay="true"></a>
+    {% comment %} <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
+      data-autoplay="true"></a> {% endcomment %}
     <a href="/about" class="about-btn scrollto">About Me</a>
   </div>
 </section>
@@ -97,7 +97,7 @@ margin-top: 10vh;
 
 <h2 class="text-center">Some of my workSamples</h2>
 {% comment %} carousel {% endcomment %}
-<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel" style="height: 100vh;">
+<div id="carousel-example-1z" class="carousel slide carousel-fade d-none d-lg-block" data-ride="carousel" style="height: 100vh;">
 
   <!--Indicators-->
   <ol class="carousel-indicators">
