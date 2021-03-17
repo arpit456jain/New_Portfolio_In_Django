@@ -23,12 +23,13 @@ a
 	margin: 80px 0px;
 	padding: 10px;
 }
-.imgsetting
+.imgsetting img
 {
-	height: 15vh;
-	color: #fff;	
-	width: 15vh;
+	height: 16vh;
+	color: yellow;	
+	width: 16vh;
 }
+
 .fa-shopping-cart
 {
 	margin-top: 20px;

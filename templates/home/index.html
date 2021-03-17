@@ -8,32 +8,62 @@ menu-active
 {% block mycss %}
 p
 {
-  font-weight:500;
+font-weight:500;
 }
 div
 {
-  overflow:hidden;  
+overflow:hidden;
 }
-{% endblock}
+body
+{
+font-family: Verdana, sans-serif; margin:0;
+}
+.carousel,.carousel .carousel-inner,.carousel .carousel-inner .active,.carousel .carousel-inner
+.carousel-item,.view{height:95%}
+
+.carousel h1
+{
+color: #fff;
+font-size: 4rem;
+}
+.carousel p
+{
+color: #fff;
+}
+.mytext,.mytext p
+{
+margin-top: 20vh;
+}
+@media screen and (max-width: 550px) {
+.carousel h1
+{
+font-size: 3rem;
+}
+
+.mytext,.mytext p
+{
+margin-top: 10vh;
+}
+}
 {% endblock mycss %}
 
 {% block body %}
 {% load static %}
 {% static 'img/skills' as baseurl %}
 {% static 'img/experience' as baseurl2 %}
-<section id="intro" style="background: url('static/img/bg/bg1.jpg') top center;width: 100%;height: 100vh;  
+<section id="intro" style="background: url('static/img/bg/home.jpg') top center;width: 100%;height: 100vh;  
   background-size: cover; overflow: hidden; position: relative;">
-    <div class="intro-container wow fadeIn">
-      <h1 class="mb-4 pb-0">Welcome to<br><span>CodeSmashers</span></h1>
-      <p class="mb-4 pb-0">This is the home page of my website Hope you like it!! </p>
-      <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
-        data-autoplay="true"></a>
-      <a href="/about" class="about-btn scrollto">About Me</a>
-    </div>
-  </section>
+  <div class="intro-container wow fadeIn">
+    <h1 class="mb-4 pb-0">Welcome to<br><span>CodeSmashers</span></h1>
+    <p class="mb-4 pb-0">This is the home page of my website Hope you like it!! </p>
+    <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
+      data-autoplay="true"></a>
+    <a href="/about" class="about-btn scrollto">About Me</a>
+  </div>
+</section>
 
 <section class="container text-center my-5 py-4">
-  <h1>My SKILLS</h1>
+  <h1>Some of My Skills</h1>
   <p>These are some of my skills i had learned so far.But i am still because <br> learning is the process which never
     ends!!</p>
 
@@ -63,14 +93,93 @@ div
         Data Science and lots n lots of more such fields</p>
     </div>
   </div>
-  <div class="col-lg-4 col-md-4 col-10 d-block m-auto mb-5">
-    <h2>And Much More</h2>
-    <a href="/portfolio" class="btn btn-primary"><b>Check Out My Portfoilio</b></a>
-  </div>
-
-
-  </div>
 </section>
+
+<h2 class="text-center">Some of my workSamples</h2>
+{% comment %} carousel {% endcomment %}
+<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel" style="height: 100vh;">
+
+  <!--Indicators-->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+    <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+  </ol>
+  <!--/.Indicators-->
+
+  <!--Slides-->
+  <div class="carousel-inner" role="listbox" style="height: 100vh;" id="mycrousel">
+
+    <!--First slide-->
+    <div class="carousel-item active" style="height: 100vh;">
+      <div class="view"
+        style="background-image: url('{% static 'img/crousel/sample3.png' %}'); background-repeat: no-repeat; background-size: cover;">
+
+
+        <!-- Mask & flexbox options-->
+        <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+          <!-- Content -->
+          <div class="text-center white-text mx-5 wow fadeIn mytext">
+            
+          </div>
+          <!-- Content -->
+
+        </div>
+        <!-- Mask & flexbox options-->
+
+      </div>
+    </div>
+    <!--/First slide-->
+
+  </div>
+  <!--/.Slides-->
+
+  <!--Controls-->
+  <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <!--/.Controls-->
+</div>
+<script>
+var imgs = [`url('{% static "img/crousel/blog.png" %}')`,`url('{% static "img/crousel/sample5.png" %}')`,`url('{% static "img/crousel/sample6.png" %}')`,`url('{% static "img/crousel/sample7.png" %}')`,`url('{% static "img/crousel/MYDG.png" %}')`,`url('{% static "img/crousel/calc.png" %}')`]
+let mycrousel = document.getElementById("mycrousel");
+for (var i = 0; i < imgs.length; i++)
+{
+  mycrousel.innerHTML += `<div class="carousel-item">
+      <div class="view"
+        style="background-image: `+imgs[i]+`; background-repeat: no-repeat; background-size: cover;">
+
+        <!-- Mask & flexbox options-->
+        <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+          <!-- Content -->
+          <div class="text-center white-text mx-5 wow fadeIn mytext">
+          </div>
+          <!-- Content -->
+
+        </div>
+        <!-- Mask & flexbox options-->
+
+      </div>
+    </div>`
+}
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+<div class="col-lg-6 col-md-4 col-10 d-block mx-auto mb-5 text-center">
+  <h2>And Much More</h2>
+  <a href="/portfolio" class="btn btn-primary"><b>Check Out My Portfoilio</b></a>
+</div>
+
+
 
 
 
@@ -101,15 +210,15 @@ div
       </figure>
     </div>
     <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
-    <a href="/portfolio" style="color:black">
-      <figure class="figure">
-        <img src="{{baseurl2}}/next.jpg" class="img-fluid figure-img rounded-circle">
-        <figcaption>
-          <h4>And Much More</h4>
-          <p>There is lot of things you don't know about me Check out my Portfolio for more information</p>
-        </figcaption>
-      </figure>
-    </a>
+      <a href="/portfolio" style="color:black">
+        <figure class="figure">
+          <img src="{{baseurl2}}/next.jpg" class="img-fluid figure-img rounded-circle">
+          <figcaption>
+            <h4>And Much More</h4>
+            <p>There is lot of things you don't know about me Check out my Portfolio for more information</p>
+          </figcaption>
+        </figure>
+      </a>
     </div>
   </div>
 </div>
