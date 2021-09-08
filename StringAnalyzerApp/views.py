@@ -2,18 +2,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
 import string
-import smtplib #for email
-from StringAnalyzerApp.models import UserFeedback
 from django.contrib import messages
-# from calculatorapp.models import UserFeedback
-def connectTOMail():
-    con = smtplib.SMTP("smtp.gmail.com",587)
-    con.ehlo()
-    # print("hello sucessfull")
-    con.starttls()
-    con.login("arpit456jain@gmail.com","#asdfghjkl#")
-    print("login succesfull")
-    return con
 
 def index(request):
     #3rd arg is a dict
@@ -110,24 +99,3 @@ def analyse(request):
 
 
 
-def feedback(request):
-      
-    if request.method == 'POST':
-       
-        feedback = request.POST['feedback']
-        name = request.POST['name']
-        email = request.POST['email']
-        number = request.POST['number']
-        # print(name,email,feedback)
-        
-        con = connectTOMail()
-        obj = UserFeedback(name=name,email=email,msg=feedback)
-        obj.save()
-        con.sendmail("arpit456jain@gmail.com",email,"Subject:Feed Back of Calculator app \n\n"+"Thank You for the feed back")
-        messages.success(request,"Thank You for contacting me Your Feedback is very precious to me!")
-        return redirect("/stringAnalyzer/feedback")
-    else:
-        pass
-    
-    # return HttpResponse('feedback page')
-    return render(request,'string/feedback.html')
