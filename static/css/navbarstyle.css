@@ -828,7 +828,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (max-width: 768px) {
   .back-to-top {
-    bottom: 150px;
+    bottom: 70px;
   }
 
   #faq #faq-list a {
