@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'home',
     'registration',
-    'ourteams',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
 ]

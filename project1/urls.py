@@ -27,5 +27,5 @@ urlpatterns = [
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/favicon.ico'))),
     # path('', views.home, name='home'),
     path('',include("home.urls")),# main Portfolio
-    path('ourteams/',include("ourteams.urls")),
+    
 ]
