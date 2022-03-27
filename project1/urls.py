@@ -30,5 +30,4 @@ urlpatterns = [
     path('votingPollApp/',include("votingPollApp.urls")),
     path('stringAnalyzer/',include("StringAnalyzerApp.urls")),
     path('ourteams/',include("ourteams.urls")),
-    path('myblog/', include('blog.urls')),
 ]
