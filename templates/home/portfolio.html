@@ -1,352 +1,553 @@
-{% extends 'base2.html' %}
+<!doctype html>
+<html lang="en">
 
-{% block title %} Portfolio{% endblock title %}
+<head>
 
+  {% load static %}
 
-{% block css %}
-.mypadding h2
+  {% static 'img' as baseurl %}
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+  <link rel="shortcut icon" href="#">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
+    rel="stylesheet">
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'css/navbarstyle.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'css/portfolio.css' %}" rel="stylesheet">
+  <link href="css/font-awesome/css/all.min.css?ver=1.2.1" rel="stylesheet">
+  <link href="css/mdb.min.css?ver=1.2.1" rel="stylesheet">
+   <!-- Attribution : https://michalsnik.github.io/aos/ -->
+   <link href="css/aos.css?ver=1.2.1" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/4e544dfbd7.js" crossorigin="anonymous"></script>
+  <title> Portfolio</title>
+  <style>
+    .mypadding h2
 {
 margin-top: 3vh;
 }
-{% endblock css %}
 
-{% block portfolioactive %}
-menu-active
-{% endblock portfolioactive %}
-{% load static %}
+  </style>
+</head>
 
-{% block body %}
-<section id="intro" style="background: url('static/img/bg/bg6.jpg') top center;width: 100%;height: 100vh;  
-  background-size: cover; overflow: hidden; position: relative;">
-    <div class="intro-container wow fadeIn">
-      <h1 class="mb-4 pb-0">My <span> Portfolio</span></h1>
-      <p class="mb-4 pb-0">This is my portfolio page where all skills and experiences are listed with  detailed information</p>
-      {% comment %} <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
-        data-autoplay="true"></a> {% endcomment %}
-      <a href="/about" class="about-btn scrollto">About Me</a>
-    </div>
-  </section>
-<section class="container text-center my-4 py-2">
-{% static 'img/skills' as baseurl %}
-{% static 'img/experience' as baseurl2 %}
-  <h1>SKILLS</h1>
-  <p>These are the skills that i had gained in my first and second year of B.tech at <b>Madan Mohan Malaviya University Of Technology ,Gorakhpur</b> </p>
+<body>
 
-  <div class="row rowsetting mypadding">
-    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
-      <div class="imgsetting d-block m-auto">
-        <img src="{{baseurl}}/C.png" class="img-fluid">
-      </div>
-      <h2 class="mt-1">C</h2>
-      <p>I work in C for a long time because of its processing speed and because of this sometimes i hav code in C. I
-        got 4 starts in c on <b>Hackerrank</b> but very soon it will be 5 stars.It is very efficient and fast that's why
-        it is still in use</p>
-    </div>
-    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
-      <div class="imgsetting d-block m-auto">
-        <img src="{{baseurl}}/C++.png" class="img-fluid">
-      </div>
-      <h2 class="mt-3">C++</h2>
-      <p>I just love this language after python because of its speed and in-built functions in <b>STL,VECTOR</b> and
-        other things. I used C++ for almost 2 years when i don't know much about python. But still now most of the time
-        i code in C++ when python takes more time</p>
-    </div>
-    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
-      <div class="imgsetting d-block m-auto">
-        <img src="{{baseurl}}/ds.png" class="img-fluid">
-      </div>  
-      <h2 class="mt-3">DSA and CP</h2>
-      <p>Its a vast area for me, till now i worked on <b>Array(1-D and 2-D), Singley Linked List , Stack and Queue </b>
-        i will go for tree and hashing very soon . At Hackerrank i have 4 stars in Problem Solving section and it will
-        be 5 stars very soon.</p>
-    </div>
-    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
-      <div class="imgsetting d-block m-auto">
-        <img src="{{baseurl}}/python.jpg" class="img-fluid">
-      </div>
-      <h2 class="mt-3">Python</h2>
-      <p>Its my favorite language for all (coding and Web Devlopment both). I always prefer python 1st for any coding
-        question if it fails then i go for C++ . I got 5 stars on hackerrank and now i started learning Flask for going
-        further in <br>Web D.
-      </p>
-    </div>
+  
+  <div class="elfsight-app-9803d9b2-b24d-4a44-818d-53efc83fa902"></div>
+  <!--==========================
+    Header
+  ============================-->
 
-    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
-      <div class="imgsetting d-block m-auto">
-        <img src="{{baseurl}}/html.jpg" class="img-fluid">
-      </div>
-      <h2 class="mt-3">HTML</h2>
-      <p>We all know its the onr of most basic building block of Web Devlopment and i know it very well i am learning
-        this things for past 1 year and i think i am pretty good in html</p>
-    </div>
-    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
-      <div class="imgsetting d-block m-auto">
-        <img src="{{baseurl}}/css.png" class="img-fluid">
-      </div>
-      <h2 class="mt-3">CSS</h2>
-      <p>It looks so easy ,but its not. Css is fully dependent on experiance it takes a lot of time to understand it
-        properly but still i am learning phase in CSS. Every day i find something new about it.</p>
-    </div>
-    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
-      <div class="imgsetting d-block m-auto">
-        <img src="{{baseurl}}/js.png" class="img-fluid">
-      </div>
-      <h2 class="mt-3">JavaScript</h2>
-      <p>I am still beginner in JS but its a great tool and it makes work very easy. I have lots of ideas of projects on
-        Js and i am working on it. Then i will go for some frameworks of Js.For now i ad made some small projects which
-        i uploaded on Sololearn.</p>
-    </div>
+  <header id="header" style="background: black;">
+    <div class="container">
 
-    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
-      <div class="imgsetting d-block m-auto">
-        <img src="{{baseurl}}/bootstrap.png" class="img-fluid">
+      <div id="logo" class="pull-left">
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <h1><a href="/about">Arpit<span>Jain</span></a></h1>
+        
       </div>
-      <h2 class="mt-3">Bootstrap</h2>
-      <p>It a great framework for me it makes work very easy for me,now i always use bootstrap in every template and
-        projects to make it responsive in all Screen. It solve my biggest problem of responsive ness for which sometimes
-        i had to write a long code in Css</p>
-    </div>
 
-    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
-      <div class="imgsetting d-block m-auto">
-        <img src="{{baseurl}}/mysql.png" class="img-fluid">
-      </div>
-      <h2 class="mt-3">My Sql</h2>
-      <p>It is the only language i know for database and i only know basics about it because i have not created any
-        project on backend i am working on my skills for backend like php and flask but for now i dont't know very much
-        about it.</p>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="/portfolio">PortFolio</a></li>
+          <li class=""><a href="/worksample">Work Sample</a></li>
+          <li class=""><a href="/djangoProjects">Django Projects</a>
+          </li>
+          <li class=""><a href="/about">About Me</a></li>
+          <li class=""><a href="/contact">Contact Me</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
     </div>
+  </header><!-- #header -->
+  {% for message in messages %}
+  <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert"
+    style="margin-top:15vh;margin-bottom:0vh;">
+    <strong>{{message.tags}}</strong> {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  <!--==========================
+    Intro Section
+  ============================-->
 
-    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
-      <div class="imgsetting d-block m-auto">
-        <img src="{{baseurl}}/django.png" class="img-fluid">
-      </div>
-      <h2>Django</h2>
-      <p>It is the only language i know for database and i only know basics about it because i have not created any
-        project on backend i am working on my skills for backend like php and flask but for now i dont't know very much
-        about it.</p>
-    </div>
-
-    <div class="col-lg-4 col-md-4 col-10 d-block m-auto">
-      <div class="imgsetting d-block m-auto">
-        <img src="{{baseurl}}/flask.png" class="img-fluid">
-      </div>
-      <h2>Flask</h2>
-      <p>It is the only language i know for database and i only know basics about it because i have not created any
-        project on backend i am working on my skills for backend like php and flask but for now i dont't know very much
-        about it.</p>
-    </div>
-
+  <section id="intro" style="background: url('static/img/bg/home.jpg') top center;width: 100%;height: 100vh;  
+  background-size: cover; overflow: hidden; position: relative;z-index:10">
+  <div class="intro-container wow fadeIn">
+    <h1 class="mb-4 pb-0">Welcome to<br><span>CodeSmashers</span></h1>
+   
+    <a href="#aboutsection" class="about-btn scrollto">About Me</a>
   </div>
 </section>
-
-
-
-
-
-
-
-<div class="container text-center my-5">
-  <h1>My Experiences</h1>
-  <p>I had done some internship and workshop before </p>
-  <div class="row">
-       
-<div class="col-lg-4 col-md-4 col-10 d-block mx-auto">
-  <figure class="figure">
-    <img src="{{baseurl2}}/gssoc.png" class="img-fluid figure-img rounded-circle">
-    <figcaption>
-      <h4>GirlScript Summer Of Code </h4>
-      <p>It was a 3 month open source program in which I had contributed to more than 11 projects of different tech stacks including both front-end and back-end projects.
-        <b>I am the top contriutor and overall winner of GSSoC'21.</b></p>
-      </p>
-      <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#gsoc">
-        View Certificate
-      </button>
-      <!-- Modal -->
-      <div class="modal fade" id="gsoc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">GSSoC'21</h5>
-              <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-                
-              </button>
+  <section id="aboutsection">
+    <div class="page-content">
+      <div class="container-fluid px-0">
+         <div class="resume-container">
+            <div class="shadow-1-strong bg-white" id="intro">
+               <div class="bg-info text-white">
+                  <div class="cover bg-image">
+                     <!-- <img src="images/diablobg.jpg"/> -->
+                     <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);backdrop-filter: blur(2px);">
+                        <div class="text-center" style="padding: 2.5rem!important;">
+                           <div class="avatar p-1"><img class="img-thumbnail shadow-4-strong rounded-circle"
+                                 src="{% static 'img/my img.jpg' %}" width="160" height="160" />
+                              <div class="circle" style="animation-delay: -3s"></div>
+                              <div class="circle" style="animation-delay: -2s"></div>
+                              <div class="circle" style="animation-delay: -1s"></div>
+                              <div class="circle" style="animation-delay: 0s"></div>
+                           </div>
+                           <div class="header-bio mt-3">
+                              <div data-aos="zoom-in" data-aos-delay="0">
+                                 <h2 class="h1">Arpit Jain</h2>
+                                 <p>Aspiring Software Developer</p>
+                              </div>
+                              <div class="header-social mb-3 d-print-none" data-aos="zoom-in" data-aos-delay="200">
+                                 <nav role="navigation">
+                                    <ul class="nav justify-content-center">
+                                       <li class="nav-item"><a class="nav-link" href="https://github.com/arpit456jain"
+                                             title="Github"><i class="fab fa-github"></i><span
+                                                class="menu-title sr-only">Github</span></a>
+                                       </li>
+                                       <li class="nav-item"><a class="nav-link"
+                                             href="https://www.linkedin.com/in/arpit-jain-0b054a170/" title="LinkedIn"><i
+                                                class="fab fa-linkedin-in"></i><span
+                                                class="menu-title sr-only">LinkedIn</span></a>
+                                       <li class="nav-item"><a class="nav-link" href="https://twitter.com/Arpit456jain"
+                                             title="Twitter"><i class="fab fa-twitter"></i><span
+                                                class="menu-title sr-only">Twitter</span></a>
+                                       </li>
+                                       </li>
+                                       <li class="nav-item"><a class="nav-link"
+                                             href="https://www.instagram.com/111arpit1" title="Instagram"><i
+                                                class="fab fa-instagram"></i><span
+                                                class="menu-title sr-only">Instagram</span></a>
+                                       </li>
+                                    </ul>
+                                 </nav>
+                              </div>
+                              <div class="d-print-none"><a
+                                    class="fancyButton btn btn-outline-light btn-lg shadow-sm mt-1 me-3"
+                                    href="https://drive.google.com/file/d/1su2rk2W4vFtQeawU66zPqZE_yVdMSvAk/view?usp=sharing" data-aos="fade-right"
+                                    data-aos-delay="700">Download CV</a>
+                                 <a class="fancyButton btn btn-default rex-primary-btn-effect-No btn btn-info btn-lg shadow-sm mt-1"
+                                    href="/contact" data-aos="fade-left" data-aos-delay="700">Contact Me</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-            <div class="modal-body">
-              <a href="img/Gssoc certi.png" download="ARPIT JAIN">
-                <img src="{{baseurl2}}/Gssoc certi.png" class="img-fluid figure-img">
-              </a>
+            <div class="shadow-2-strong  p-5 text-white bg-matte" id="about">
+               <div class="about-section">
+                  <div class="row ">
+                     
+                     <div class="col-md-6 mx-auto">
+                        <h2 class="h2 fw-dark text-center ">About Me</h2>
+                        <table id="about-text">
+                           <caption></caption>
+                           <th id="th-about-me"></th>
+                           <tr>
+                              <td>
+                                 <br />
+                                 <i class="fas fa-graduation-cap text-white"> </i>
+                              </td>
+                              <td>
+                                 <br />
+                                 I’m currently pursuing B.Tech in Computer Science & Engineering at
+                                 Madan Mohan Malaviya University Of Technology(MMMUT) Gorakhpur.
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <br />
+                                 <i class="fas fa-laptop-code text-white"> </i>
+                              </td>
+                              <td>
+                                 <br />
+                                 Well-versed in Data Structures, Algorithms & Object Oriented Programming Skills,
+                                 Responsive Web
+                                 Development, Open Source Enthusiast
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <br />
+                                 <i class="fas fa-code text-white"> </i>
+                              </td>
+                              <td>
+                                 <br />
+                                 I’m currently working on Responsive Web Design, JavaScript, Python Django Collaborative
+                                 Open
+                                 Sourcing, Innovation, Problem-solving & quickly mastering new technologies is my
+                                 passion
+                              </td>
+                           </tr>
+                        
+                           <br />
+                          
+                        </table>
+                     </div>
+                  </div>
+               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <div class="shadow-1-strong bg-cublue p-4 text-white" id="skills">
+               <div class="skills-section">
+                  <h2 class="h2 fw-light mb-4">Professional Skills</h2>
+                  <div class="row">
+                     <div class="col-md-3">
+                        <h4 class="h4 fw-light mb-4">Programming Languages</h4>
+                        <div class="mb-3">
+                           <span class="fw-bolder">C++</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-secondary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 95%"
+                                 aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">Master</div>
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <span class="fw-bolder">Java</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-secondary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 80%"
+                                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">Intermediate</div>
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <span class="fw-bolder">Python</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-secondary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="500" data-aos-anchor=".skills-section" style="width: 90%"
+                                 aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">Master</div>
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <span class="fw-bolder">JavaScript</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-secondary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="600" data-aos-anchor=".skills-section" style="width: 85%"
+                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Advance</div>
+                           </div>
+                        </div>
+                      
+                     </div>
+                     <div class="col-md-3">
+                        <h4 class="h4 fw-light mb-4">FrontEnd Development</h4>
+                        <div class="mb-3">
+                           <span class="fw-bolder">HTML5</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="100" data-aos-anchor=".skills-section" style="width: 98%;"
+                                 aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">Master</div>
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <span class="fw-bolder">CSS3</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="200" data-aos-anchor=".skills-section" style="width: 95%"
+                                 aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">Master</div>
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <span class="fw-bolder">Bootstrap 5</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="300" data-aos-anchor=".skills-section" style="width: 92%"
+                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Advance</div>
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <span class="fw-bolder">React</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="300" data-aos-anchor=".skills-section" style="width: 75%"
+                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Advance</div>
+                           </div>
+                        </div>
+    
+                     </div>
+                     <div class="col-md-3">
+                        <h4 class="h4 fw-light mb-4">Frameworks & Libraries</h4>
+                        <div class="mb-3">
+                           <span class="fw-bolder">Django</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-tertiary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 95%"
+                                 aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">Master</div>
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <span class="fw-bolder">Flask</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-tertiary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 90%"
+                                 aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">Expert</div>
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <span class="fw-bolder">Bootstrap</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-tertiary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="500" data-aos-anchor=".skills-section" style="width: 65%"
+                                 aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">Advance</div>
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <span class="fw-bolder">TailWind CSS</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-tertiary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="500" data-aos-anchor=".skills-section" style="width: 75%"
+                                 aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">Intermediate</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-3">
+                        <h4 class="h4 fw-light mb-4">Tools/IDEs/Databases</h4>
+                        <div class="mb-3">
+                           <span class="fw-bolder">Git & GitHub</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-quarternary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 98%"
+                                 aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">Master</div>
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <span class="fw-bolder">Visual Studio Code</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-quarternary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 93%"
+                                 aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">Expert</div>
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <span class="fw-bolder">My Sql</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-quarternary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="500" data-aos-anchor=".skills-section" style="width: 90%"
+                                 aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">Expert</div>
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <span class="fw-bolder">Sqlite3</span>
+                           <div class="progress my-2 rounded" style="height: 20px">
+                              <div class="progress-bar bg-quarternary" role="progressbar" data-aos="zoom-in-right"
+                                 data-aos-delay="500" data-aos-anchor=".skills-section" style="width: 85%"
+                                 aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">Advance</div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
+
+            <div class="shadow-1-strong bg-purple p-5 text-white" id="experience">
+               <div class="work-experience-section">
+                  <h2 class="h2 fw-light mb-4">Experience</h2>
+                  <div class="timeline">
+                     <div class="timeline-card-info" data-aos="fade-in" data-aos-delay="0">
+                        <div class="timeline-head px-4 pt-3 d-flex">
+                           <img class="org-logo" src="{% static 'img/experience/gssoc.png' %}" alt="" height="40px" width="40px"/>
+                           <div class="h5">Project Admin <br /><span class="text-white h6"> GirlScript Summer Of Code
+                                 2022</span>
+                           </div>
+                        </div>
+                        <div class="xp-body timeline-body px-4 pb-4">
+                           <div class="text-white text-small mb-3"> March, 2022 - May-2022</div>
+                           <div>
+                              <ul>
+                                 <li> Educating & guiding contributors embark on their Open Source journey </li>
+                                 <li> Managing all operations related to the Projects</li>
+                                 <li> Managed and reviewed 450+ Pull requests</li>
+                                 <li> Managed 100+ contributors on my projects</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="timeline-card-info" data-aos="fade-in" data-aos-delay="0">
+                        <div class="timeline-head px-4 pt-3 d-flex">
+                           <img class="org-logo" src="{% static 'img/experience/gssoc.png' %}" alt="" height="45px" width="45px"/>
+                           <div class="h5">Supervisor & Mentor <br /><span class="text-white h6"> GirlScript Winter of
+                                 Contributing '21</span>
+                           </div>
+                        </div>
+                        <div class="xp-body timeline-body px-4 pb-4">
+                           <div class="text-white text-small mb-3"> September, 2021 - December, 2021</div>
+                           <div>
+                              <ul>
+                                 <li><a class="text-info" href="https://i.imgur.com/dp4u3FC.png">Certificate of Achievement - Top Supervisor</a></li>
+                                 <li> Helping 6000+ contributors learn & start their Open Source journey </li>
+                                 <li> Maintaining a repository with ~900 stars & ~1.6k forks </li>
+                                 <li> Developed bot & integrated workflow for smooth & efficient functioning of the
+                                    repository with
+                                    automation
+                                 </li>
+                                 <li> Maintainer & reviewer for HacktoberFest-accepted contributions</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="timeline-card-info" data-aos="fade-in" data-aos-delay="200">
+                        <div class="timeline-head px-4 pt-3 d-flex">
+                           <img class="org-logo" src="{% static 'img/experience/gssoc.png' %}" alt="" height="40px" width="40px"/>
+                           <div class="h5">Open Source Contributor <br /><span class="text-white h6">GirlScript Summer
+                                 of Code
+                                 (GSSOC'21)</span>
+                           </div>
+                        </div>
+                        <div class="xp-body timeline-body px-4 pb-4">
+                           <div class="text-white text-small mb-3">March 2021 - June 2021</div>
+                           <div>
+                              <ul>
+                                 <li><a class="text-info" href="https://girlscript.github.io/GirlScript-Summer-of-Code/profile.html?id=arpit456jain">Profile</a> &nbsp; | &nbsp; <a class="text-info" href="https://i.imgur.com/ZcpBGEy.png" target="_blank">Certificate</a></li>
+                                 <li>NeoAlgo - 17 Issues with 14 merged PRs &nbsp; | &nbsp; AlgoTree</li>                            
+                              </ul>
+                        </div>
+                        </div>
+                     </div>
+
+
+                     <div class="timeline-card-info" data-aos="fade-in" data-aos-delay="200">
+                        <div class="timeline-head px-4 pt-3 d-flex">
+                           <img class="org-logo" src="{% static 'img/experience/E-literate logo.png' %}" alt="" height="40px" width="40px"/>
+                           <div class="h5">Web Developer <br /><span class="text-white h6">E-Literate</span>
+                           </div>
+                        </div>
+                        <div class="xp-body timeline-body px-4 pb-4">
+                           <div class="text-white text-small mb-3">Aug 2021 - oct 2021</div>
+                           <div>
+                              <ul>
+                                 <li><a class="text-info" href="https://github.com/arpit456jain/e-literate">Github Repo</a> &nbsp; | &nbsp;<a class="text-info" href="https://arpit456jain.github.io/e-literate/">Website</a> &nbsp; | &nbsp; <a class="text-info" href="https://media-exp1.licdn.com/dms/image/C4E2DAQF_t3BIx2zyNQ/profile-treasury-image-shrink_800_800/0/1622736542293?e=1661706000&v=beta&t=aU5QWfbILhFUj2RtsLpKIu8ddxe1mujQJ1Rp8wAuxI0" target="_blank">Certificate</a></li>
+                                 <li>Developed whole Front End for the Official website</li>                            
+                              </ul>
+                        </div>
+                        </div>
+                     </div>
+
+
+                     <div class="timeline-card-info" data-aos="fade-in" data-aos-delay="200">
+                        <div class="timeline-head px-4 pt-3 d-flex">
+                           <img class="org-logo" src="{% static 'img/experience/Start Up Inc.jpg' %}" alt="" height="40px" width="40px"/>
+                           <div class="h5">Web Developer <br /><span class="text-white h6">StartUp Inc</span>
+                           </div>
+                        </div>
+                        <div class="xp-body timeline-body px-4 pb-4">
+                           <div class="text-white text-small mb-3">July 2020 - Aug 2020</div>
+                           <div>
+                              <ul>
+                                 <li><a class="text-info" href="https://github.com/arpit456jain/Cool-Front-End-Templates">Github Repo</a> &nbsp; | &nbsp;<a class="text-info" href="https://media-exp1.licdn.com/dms/image/C4E2DAQECfiSpSiVaxA/profile-treasury-image-shrink_800_800/0/1622736503934?e=1661706000&v=beta&t=TuZE8lcCwBht5KsFZ7olu3_k1VIqCGigvY8tRtSns7c" target="_blank">Certificate</a></li>
+                                 <li>Clonned some UI templates into webpages</li>                            
+                              </ul>
+                        </div>
+                        </div>
+                     </div>
+
+
+
+                  </div>
+               </div>
+            </div>
+            <div class="shadow-1-strong bg-olive p-5 text-white" id="education">
+               <div class="education-section">
+                  <h2 class="h2 fw-light mb-4">Education</h2>
+                  <div class="timeline">
+                     <div class="timeline-card timeline-card-success" data-aos="fade-in" data-aos-delay="0">
+                        <div class="timeline-head px-4 pt-3">
+                           <div class="h5">B. Tech in Computer Science & Engineering <br /><span
+                                 class="text-white h6">(MMMUT) madan mohan malaviya university of technology </span>
+                           </div>
+                        </div>
+                        <div class="timeline-body px-4 pb-4">
+                           <div class="text-white text-small mb-3">2019 - 2023 | Gorakhpur, India</div>
+                           <div>
+                              Madan Mohan Malaviya University of Technology, Gorakhpur has been established in year 2013 by the Government of Uttar Pradesh in the form of a non-affiliating, teaching and research University after reconstituting the Madan Mohan Malaviya Engineering College, Gorakhpur which was established in 1962.
+                              NAAC ranking 1 | NIRF 183 Rank 
+                           </div>
+                        </div>
+                     </div>
+                     <div class="timeline-card timeline-card-success" data-aos="fade-in" data-aos-delay="200">
+                        <div class="timeline-head px-4 pt-3">
+                           <div class="h5"> Passed 12th (90%), CBSE <br /> <span class="text-white h6"> Kendriya Vidyalaya Aliganj Lucknow</span>
+                           </div>
+                        </div>
+                        <div class="timeline-body px-4 pb-4">
+                           <div class="text-white text-small mb-3">2016 - 2018 | Durgapur, India</div>
+                        </div>
+                     </div>
+                     <div class="timeline-card timeline-card-success" data-aos="fade-in" data-aos-delay="400">
+                        <div class="timeline-head px-4 pt-3">
+                           <div class="h5">Passed 10th (10 CGPA) CBSE <br /><span class="text-white h6"> Kendriya Vidyalaya Aliganj Lucknow</span>
+                           </div>
+                        </div>
+                        <div class="timeline-body px-4 pb-4">
+                           <div class="text-white text-small mb-3">2016</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+           
+            
+         </div>
       </div>
-    </figcaption>
-  </figure>
-</div>
-
-
-<div class="col-lg-4 col-md-4 col-10 d-block mx-auto mt-2">
-  <figure class="figure">
-    <img src="{{baseurl2}}/gfg.png" class="img-fluid figure-img rounded-circle">
-    <figcaption>
-      <h4>GFG 11 weeks Workshop</h4>
-      <p>Its a 11 week workshop by <b>GeeksForGeeks</b> which contains all the topics from basics to advanced and had a very good content.</p>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#geeksforgeeks">
-        View Certificate
-      </button>
-      <!-- Modal -->
-      <div class="modal fade" id="geeksforgeeks" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">GeeksForGeeks</h5>
-              <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-               
-              </button>
-            </div>
-            <div class="modal-body">
-              <a href="img/gfg certi.jpeg" download="ARPIT JAIN">
-                <img src="{{baseurl2}}/gfg certi.jpeg" class="img-fluid figure-img">
-              </a>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </figcaption>
-  </figure>
-</div>
-    <div class="col-lg-4 col-md-4 col-10 d-block mx-auto">
-      <figure class="figure">
-        <img src="{{baseurl2}}/way2.png" class="img-fluid figure-img rounded-circle">
-        <figcaption>
-          <h4>Way2assignments</h4>
-          <p>Its a 30 days work from home Internship as Buisness Development intern its a great experience as it was my
-            first internship.It was a great experience to do a official internship</p>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#way2assignments">
-            View Certificate
-          </button>
-          <div class="modal fade" id="way2assignments" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Way2Assignments</h5>
-                  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-                    
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <a href="img/way2certi.png" download="ARPIT JAIN">
-                    <img src="{{baseurl2}}/way2certi.png" class="img-fluid figure-img">
-                  </a>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-lg-4 col-md-4 col-10 d-block mx-auto">
-      <figure class="figure">
-        <img src="{{baseurl2}}/Start Up Inc.jpg" class="img-fluid figure-img rounded-circle">
-        <figcaption>
-          <h4>StartUp Inc</h4>
-          <p>It is also a 30 days work from home Internship as Front-end developer intern and its my second internship
-            and i learn a lot from this i am very greatful for their support.</p>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#StartUpInc">
-            View Certificate
-          </button>
-          <!-- Modal -->
-          <div class="modal fade" id="StartUpInc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">StartUpInc</h5>
-                  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-                   
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <a href="img/Start Up Inc certi.jpg" download="ARPIT JAIN">
-                    <img src="{{baseurl2}}/Start Up Inc certi.jpg" class="img-fluid figure-img">
-                  </a>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-lg-4 col-md-4 col-10 d-block mx-auto">
-      <figure class="figure">
-        <img src="{{baseurl2}}/E-literate logo.png" class="img-fluid figure-img rounded-circle">
-        <figcaption>
-          <h4>E-Literate</h4>
-          <p>It is  a 2 month work from home Internship as Front-end developer intern and its my third internship
-           . In this intership I hd made the full front-end of the official website of E-literate</p>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#E-literate">
-            View Certificate
-          </button>
-          <!-- Modal -->
-          <div class="modal fade" id="E-literate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">E-literate</h5>
-                  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-                    
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <a href="img/experience/e-literate certi.jpeg" download="ARPIT JAIN">
-                    <img src="{{baseurl2}}/e-literate certi.jpg" class="img-fluid figure-img">
-                  </a>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </figcaption>
-      </figure>
-    </div>
-
-
-    <div class="col-lg-4 col-md-4 col-10 d-block mx-auto">
-      <figure class="figure">
-        <img src="{{baseurl2}}/next.jpg" class="img-fluid figure-img rounded-circle">
-        <figcaption>
-          <h4>Wating for the next</h4>
-          <p>I am eagerly waiting for the next internship because i belive in skills and experience the more i work, the
-            more i became rich in experience </p>
-          <a href="https://drive.google.com/file/d/1vxQsGgvdIy0jZjR_wLERlm-HPfeQY9hN/view" type="button" class="btn btn-primary" >
-            View my Resume
-          </a>
-          <!-- Modal -->
-          
-        </figcaption>
-      </figure>
-    </div>
-  </div>
-</div>
+   </div>
+  </section>
+  {% static 'img/skills' as baseurl %}
+{% static 'img/experience' as baseurl2 %}
 
 
 
-{% endblock body %}
+
+
+
+
+
+
+  {% include "footer.html" %}
+  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+  <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+  <script src="{% static 'lib/superfish/hoverIntent.js' %}"></script>
+  <script src="{% static 'lib/superfish/superfish.min.js' %}"></script>
+  <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+  <script src="{% static 'lib/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+
+  <!-- Template Main Javascript File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
