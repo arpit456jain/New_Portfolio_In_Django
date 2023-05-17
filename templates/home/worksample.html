@@ -44,33 +44,31 @@ menu-active
       var mycards = document.getElementById('mycards');
        
          
-    let rootlink = 'https://arpit456jain.github.io/CodeSmashers/'
-      let links = ["Food Ordering/index.html","Food template/index.html", "Imaginative template/index.html" ,"Restaurant template/index.html","we design and develop/index.html","FB social media website/index.html","LinkedIn/HomePage.html","Portfolio"];
+    let rootlink = 'https://cool-frontend-templates.netlify.app/'
+      let links = ["food%20website%20template/","chinese%20restaurant/" ,"Restaurant template/index.html","we design and develop/index.html","portfolio/","instagram%20clone%20frontend/"];
 
       let basepath = ["workSample/"]
-      let path = ["sample3.png","sample4.png", "sample5.png" , "sample6.png","sample8.png","sample7.png" ,"linkedin.png","portfolio.png"];
+      let path = ["sample3.png","sample4.png" , "sample6.png","sample8.png","portfolio.png","insta.png"];
 
     let s = "https://github.com/arpit456jain/CodeSmashers/tree/master/"
-      let source = ["Food Ordering","Food template", "Imaginative template" , "Restaurant template","we design and develop","Fb social media website","LinkedIn","Portfolio"]
-      let names = ["Food Ordering","Classic Restraunt", "Imaginative" , "Pizza corner","We Design and Develop","Fb social media website","LinkedIn","Old Portfolio" ];
+      let source = ["Food Ordering","Food template", "Restaurant template","we design and develop","Portfolio"]
+      let names = ["Food Ordering","Classic Restraunt", "Pizza corner","We Design and Develop","Old Portfolio" , "Instagram Clone"];
       let desc = [
-                        "This template i made using only html,css and some media queries but later i added some bootstrap but still it can be made better its a food ordering website template",
-
+                        "This template i made using only html,css and some media queries but later i added some bootstrap but still it can be made better its a food ordering website template"
+                        ,
                         " I had made this template as a task under the <b>front-end developer intership at Start Up Inc</b> from 9th July 2020 to 9 Aug 2020.It is fully reponsive as i used bootstrap and medeia queries"
                         ,
-                        " This one is made <b> completely in html and css only</b>. I did't use bootstrap in this all i used 3 css files for 3 different screens <b>Desktop, i-pad, mobile</b>  and its actually looks very nice.",
-                        "This template is also created as a task under an intership and it is fully responsive good-looking template i only used html,css,bootstrap,and some media queries",
-                        "This template is also created as a task under an intership and it is fully responsive good-looking template i only used html,css,bootstrap,and some media queries",
-
-                        "I tried to Replicate the Front-End of Fb Social Media Platform it is 80-90% similar to actual page and its also dynamic."
-                    ,
-                    "I tried to Replicate the Front-End of Linkedin it is 80-90% similar to actual page and its also dynamic"
-                    ,
+                        "This template is also created as a task under an intership and it is fully responsive good-looking template i only used html,css,bootstrap,and some media queries"
+                        ,
+                        "This template is also created as a task under an intership and it is fully responsive good-looking template i only used html,css,bootstrap,and some media queries"
+                        ,
                     "Its my old portfolio that i built in my first year it is the front end part of my portfolio. I had migrated it to django now"
+                    ,
+                    "I tried to clone the front page of instagram , i thought of making it dyanamic by using a api for fetching the data"
                   ];
       
 
-      for(let i=0;i<8;i++)
+      for(let i=0;i<links.length;i++)
       {
         console.log(links[i] , typeof(links[i]))
       mycards.innerHTML += ` <div class="col-lg-4 col-md-4 col-12">
