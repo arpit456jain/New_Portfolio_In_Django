@@ -10,7 +10,6 @@ admin.site.index_title = "Portfolio"
 
 urlpatterns = [
     path('',views.portfolio,name='portfolio'),
-    path('about/',views.about,name='about'),
     path('contact/',views.contact,name='contact'),
     path('worksample',views.worksample,name='worksample'),
     path('djangoProjects',views.djangoProjects,name='djangoProjects'),

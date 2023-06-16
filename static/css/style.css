@@ -41,3 +41,8 @@ a
 	border: none;	
 }
   
+.about-me-section .img-fluid
+{
+	width: 15vw;
+	height: auto;
+}
