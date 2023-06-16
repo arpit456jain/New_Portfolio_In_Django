@@ -50,8 +50,8 @@ menu-active
       let basepath = ["workSample/"]
       let path = ["sample3.png","sample4.png" , "sample6.png","sample8.png","portfolio.png","insta.png"];
 
-    let s = "https://github.com/arpit456jain/CodeSmashers/tree/master/"
-      let source = ["Food Ordering","Food template", "Restaurant template","we design and develop","Portfolio"]
+    let s = "https://github.com/arpit456jain/Cool-Front-End-Templates/tree/master/"
+      let source = ["food%20website%20template/","Chinese Restaurant/" ,"restaurant template","We design and develop","Portfolio/","Instagram%20Clone%20Frontend/"];
       let names = ["Food Ordering","Classic Restraunt", "Pizza corner","We Design and Develop","Old Portfolio" , "Instagram Clone"];
       let desc = [
                         "This template i made using only html,css and some media queries but later i added some bootstrap but still it can be made better its a food ordering website template"
@@ -73,7 +73,7 @@ menu-active
         console.log(links[i] , typeof(links[i]))
       mycards.innerHTML += ` <div class="col-lg-4 col-md-4 col-12">
           <div class="card" style = "overflow:hidden;">
-            <a href ="`+rootlink+links[i]+`">
+            <a href ="`+rootlink+links[i]+`" target = "_blank">
             <img src={{baseurl}}/${basepath[0]}${path[i]} class="card-img-top img-fluid" alt="...">
             <div class="card-body p-2">
               <h5 class="card-title">${names[i]}</h5>

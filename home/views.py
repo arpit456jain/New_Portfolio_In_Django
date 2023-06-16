@@ -9,13 +9,6 @@ def home(request):
     # messages.success(request,'Welcome to my website nice to see you!!')
     return render(request,'home/index.html')
 
-def about(request):
-    # return HttpResponse('about')
-    params = {'myname':'Arpit Jain'}
-    return render(request,'home/about.html',params)
-
-
-
 import string  
     
 # Storing the sets of punctuation in variable result  
