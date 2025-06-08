@@ -12,5 +12,5 @@ urlpatterns = [
     path('',views.portfolio,name='portfolio'),
     path('contact/',views.contact,name='contact'),
     path('worksample',views.worksample,name='worksample'),
-    path('djangoProjects',views.djangoProjects,name='djangoProjects'),
+    path('projects',views.projects,name='projects'),
 ]

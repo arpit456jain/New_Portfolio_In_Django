@@ -54,5 +54,5 @@ def worksample(request):
     # return HttpResponse('projects')
     return render(request,'home/worksample.html')
 
-def djangoProjects(request):
+def projects(request):
     return render(request,'home/django.html')

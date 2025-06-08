@@ -11,11 +11,11 @@ menu-active
 <section id="intro" style="background: url('static/img/bg/django.jpg') top center;width: 100%;height: 100vh;  
   background-size: cover; overflow: hidden; position: relative;">
     <div class="intro-container wow fadeIn">
-        <h1 class="mb-4 pb-0">My<br><span>Django Projects</span> </h1>
-        <p class="mb-4 pb-0">My all Django and Flask Projects are available here with source code</p>
+        <h1 class="mb-4 pb-0">My<br><span> Projects</span> </h1>
+        <p class="mb-4 pb-0">My all React and Django Projects are available here with source code</p>
         {% comment %} <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4"
             data-vbtype="video" data-autoplay="true"></a> {% endcomment %}
-        <a href="/about" class="about-btn scrollto">About Me</a>
+        <a href="/#aboutsection" class="about-btn scrollto">About Me</a>
     </div>
 </section>
 {% static 'img/djangoProjects' as baseurl %}
@@ -67,12 +67,35 @@ menu-active
                 <img src="{{baseurl}}/todolist.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <a href="https://task-manager15.herokuapp.com/" target = "_blank">
-                        <h5 class="card-title">ToDoList App</h5>
+                        <h5 class="card-title">A Secure and Personal To-Do App Built with Django</h5>
                     </a>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <p class="card-text">This is a robust and user-friendly Task Manager web application built using Django and Django REST Framework. Designed for individual productivity, it includes user authentication so each user can manage their own tasks securely.</p>
                     <a href="https://github.com/arpit456jain/TaskManager"
                         class="btn btn-primary" target = "_blank">Source Code</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col col-lg-4 my-1">
+            <div class="card" style="width: 18rem;background-color:#6eff0085">
+                <img src="{{baseurl}}/taskManagerReactApp.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="https://codesmashersblog.herokuapp.com/" target = "_blank">
+                        <h5 class="card-title">Task Manager</h5>
+                    </a>
+                    <p class="card-text">
+                        This is a sleek and responsive Task Manager application developed using React for the frontend and Spring Boot / Django REST APIs for the backend. It allows users to efficiently manage their daily tasks with features like:
+                    </p>
+                    <ul>
+                        <li>Backend Integration – Uses REST APIs for all CRUD operations.</li>
+                        <li>Responsive Design – Built with Bootstrap for a mobile-friendly UI.</li>
+                        <li>Real-time Updates – Instantly reflects changes like add/edit/delete without page reload.</li>
+                    </ul>
+                    <a href="https://github.com/arpit456jain/-CodesmashersBlog-In-Django" target = "_blank" class="btn btn-primary">Source
+                        Code</a>
+                    <a href="https://codesmashers-taskmanager.netlify.app/" target = "_blank" class="btn btn-primary">
+                        Live</a>
                 </div>
             </div>
         </div>
