@@ -54,8 +54,10 @@ def portfolio(request):
     return render(request, 'home/portfolio.html', {"links": links,"allLinks" : all_links})
 
 def worksample(request):
+    all_links = ImportantLink.objects.all()
     # return HttpResponse('projects')
-    return render(request,'home/worksample.html')
+    return render(request,'home/worksample.html',{"allLinks" : all_links})
 
 def projects(request):
-    return render(request,'home/django.html')
+    all_links = ImportantLink.objects.all()
+    return render(request,'home/django.html',{"allLinks" : all_links})
