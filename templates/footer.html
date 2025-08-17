@@ -63,19 +63,22 @@
                  <a href="https://github.com/arpit456jain/QuizAppFrontEndReact" target="_blank">
                   Quiz App</a>
               </li>
+
+              <li><i class="fa fa-angle-right"></i>
+                 <a href="https://codesmashers-url-shortner.netlify.app/" target="_blank">
+                  Url Shortner</a>
+              </li>
               
             </ul>
 
           </div>
           <div class="col-12 mx-auto">
-            <div class="social-links col-lg-3 col-sm-12 mx-auto">
-              <a href="https://github.com/arpit456jain" target="_blank" class="twitter"><i class="fa fa-github"></i></a>
-              <a href="https://www.facebook.com/profile.php?id=100011460231562" target="_blank" class="facebook"><i
-                  class="fa fa-facebook"></i></a>
-              <a href="https://www.instagram.com/111arpit1/" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="https://www.codechef.com/users/aj15"  target="_blank" class="google-plus"><i class="fa fa-code"></i></a>
-              <a href="https://www.linkedin.com/in/arpit-jain-0b054a170/" target="_blank" class="linkedin"><i
-                  class="fa fa-linkedin"></i></a>
+            <div class="social-links col-lg-2 col-sm-12 mx-auto">
+              {% for link in allLinks %}
+                {% if link.title != "Resume" %}
+                <a href="{{link.url}}" target="_blank" class=""><i class="{{link.icon}}"></i></a>
+                {% endif %}
+              {% endfor %}
 
             </div>
           </div>

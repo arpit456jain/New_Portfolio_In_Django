@@ -1,15 +1,13 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib import messages
-
+import string  
 # Create your views here.
-from home.models import Contact
+from home.models import Contact,ImportantLink
 def home(request):
-    # return HttpResponse('home')
-    # messages.success(request,'Welcome to my website nice to see you!!')
     return render(request,'home/index.html')
 
-import string  
+
     
 # Storing the sets of punctuation in variable result  
 punc = string.punctuation  
@@ -48,8 +46,13 @@ def contact(request):
     return render(request,'home/contact.html')
 
 def portfolio(request):
-    # return HttpResponse('projects')
-    return render(request,'home/portfolio.html')
+    all_links = ImportantLink.objects.all()
+    links = {}
+    for link in all_links:
+        links[link.title] = link.url
+    print(links)
+    return render(request, 'home/portfolio.html', {"links": links,"allLinks" : all_links})
+
 def worksample(request):
     # return HttpResponse('projects')
     return render(request,'home/worksample.html')

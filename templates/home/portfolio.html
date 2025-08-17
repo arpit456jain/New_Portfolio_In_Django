@@ -115,31 +115,44 @@ margin-top: 3vh;
                               <div class="header-social mb-3 d-print-none" data-aos="zoom-in" data-aos-delay="200">
                                  <nav role="navigation">
                                     <ul class="nav justify-content-center">
-                                       <li class="nav-item"><a class="nav-link" target="_blank" href="https://github.com/arpit456jain"
+                                       <li class="nav-item">
+                                          {% if links.GitHub %}
+                                          <a class="nav-link" target="_blank" href="{{ links.GitHub }}"
                                              title="Github"><i class="fab fa-github"></i><span
-                                                class="menu-title sr-only">Github</span></a>
+                                                class="menu-title sr-only">GitHub</span>
+                                             </a>
+                                          {% endif %}
                                        </li>
-                                       <li class="nav-item"><a class="nav-link"
-                                             href="https://www.linkedin.com/in/arpit-jain-0b054a170/" target="_blank" title="LinkedIn"><i
+                                       <li class="nav-item">
+                                          {% if links.LinkedIn %}
+                                          <a class="nav-link"
+                                             href="{{ links.LinkedIn }}" target="_blank" title="LinkedIn"><i
                                                 class="fab fa-linkedin-in"></i><span
-                                                class="menu-title sr-only" >LinkedIn</span></a>
-                                       <li class="nav-item"><a class="nav-link" href="https://twitter.com/Arpit456jain"
-                                             title="Twitter" target="_blank"><i class="fab fa-twitter"></i><span
-                                                class="menu-title sr-only" >Twitter</span></a>
+                                                class="menu-title sr-only" >LinkedIn</span>
+                                             </a>
+                                             {% endif %}
+                                       
                                        </li>
-                                       </li>
-                                       <li class="nav-item"><a class="nav-link"
-                                             href="https://www.instagram.com/111arpit1"  target="_blank" title="Instagram"><i
+                                       <li class="nav-item">
+                                           {% if links.Instagram %}
+                                          <a class="nav-link"
+                                             href="{{ links.Instagram }}"  target="_blank" title="Instagram"><i
                                                 class="fab fa-instagram"></i><span
-                                                class="menu-title sr-only">Instbbbhjagram</span></a>
+                                                class="menu-title sr-only"></span>
+                                              {% endif %}
+                                             </a>
                                        </li>
                                     </ul>
                                  </nav>
                               </div>
-                              <div class="d-print-none"><a
+                              <div class="d-print-none">
+                                 {% if links.Resume %}
+                                 <a
                                     class="fancyButton btn btn-default rex-primary-btn-effect-No btn btn-info btn-lg shadow-sm mt-1"
-                                    href="https://drive.google.com/file/d/1LbK9RjiVBddbbDZjI3bjmdhLI_fEutsT/view" target="_blank" data-aos="fade-right"
+                                    href="{{ links.Resume.url }}" target="_blank" data-aos="fade-right"
                                     data-aos-delay="700">View Resume</a>
+                                 {% endif %}
+                                 
                                  <a class="fancyButton btn btn-default rex-primary-btn-effect-No btn btn-info btn-lg shadow-sm mt-1"
                                     href="https://www.linkedin.com/in/arpit-jain-0b054a170/" target="_blank" data-aos="fade-left" data-aos-delay="700">Contact Me</a>
                               </div>
